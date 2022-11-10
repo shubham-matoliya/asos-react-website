@@ -1,0 +1,17 @@
+.stripe-ads {
+  width: 100vw;
+  margin: 50px auto;
+  background-color: #f798ba;
+  color: black;
+  text-align: center;
+  padding: 10px 0;
+}
+.stripe-ads h1 {
+  font-size: 32px;
+  font-weight: 900;
+  font-family: "Roboto Mono";
+}
+.stripe-ads p {
+  font-size: 10px;
+  font-family: sans-serif;
+}

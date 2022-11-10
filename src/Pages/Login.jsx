@@ -2,10 +2,10 @@ import logoImage from "../Assets/asos-logo.jpeg";
 
 import { AuthContext } from "../Context/AuthContext/AuthContextProvider";
 import "./authentication.css";
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { Heading, Center } from "@chakra-ui/react";
-
+import { useToast } from "@chakra-ui/react";
 const Login = () => {
   // const initialData = {
   //   email: "",
@@ -15,16 +15,26 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+
   const navigate = useNavigate();
   const authentication = useContext(AuthContext);
   const { logIn, googleSignIn } = authentication;
-
+  const toast = useToast();
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
     try {
       await logIn(email, password);
-      navigate("/");
+      toast({
+        title: "login successfull",
+        status: "success",
+        isClosable: true,
+        position: "top",
+      });
+      document.querySelector("form").reset();
+      setTimeout(() => {
+        navigate("/");
+      }, 2000);
     } catch (error) {
       setError(error.message);
       console.log(error);
@@ -35,13 +45,31 @@ const Login = () => {
     try {
       await googleSignIn()
         .then((res) => res.user)
-        .then((res) => console.log(res));
-      <Navigate to={"/"} />;
+        .then((res) => {
+          console.log(res);
+          toast({
+            title: "login successfull",
+            status: "success",
+            isClosable: true,
+            position: "top",
+          });
+          setTimeout(() => {
+            navigate("/");
+          }, 2000);
+        });
     } catch (error) {
       setError(error.message);
     }
   };
-
+  useEffect(() => {
+    error &&
+      toast({
+        title: error,
+        status: "error",
+        isClosable: true,
+        position: "top",
+      });
+  }, [error]);
   return (
     <div id="login">
       <Center>

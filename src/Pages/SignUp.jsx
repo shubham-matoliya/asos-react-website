@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import logoImage from "../Assets/asos-logo.jpeg";
@@ -6,6 +6,7 @@ import { AuthContext } from "../Context/AuthContext/AuthContextProvider";
 import "./authentication.css";
 import { Heading, Center } from "@chakra-ui/react";
 import axios from "axios";
+import { useToast } from "@chakra-ui/react";
 const SignUp = () => {
   const initialUser = {
     email: "",
@@ -14,6 +15,8 @@ const SignUp = () => {
   const [user, setUser] = useState(initialUser);
   const [error, setError] = useState("");
   const navigate = useNavigate();
+  const toast = useToast();
+
   const Authentication = useContext(AuthContext);
   const { signUp, logIn } = Authentication;
   // console.log("Authentication is ", Authentication);
@@ -23,16 +26,31 @@ const SignUp = () => {
     setError("");
     try {
       await signUp(user.email, user.password);
+      toast({
+        title: "Registration Successful",
+        status: "success",
+        isClosable: true,
+        position: "top",
+      });
       navigate("/login");
     } catch (error) {
       setError(error.message);
     }
     axios.post(`http://localhost:8080/users`, user);
   };
+  useEffect(() => {
+    error &&
+      toast({
+        title: error,
+        status: "error",
+        isClosable: true,
+        position: "top",
+      });
+  }, [error]);
   return (
     <div id="login">
       <Center>
-        <Heading marginTop={10}>Signup</Heading>
+        <Heading marginTop={15}>Signup</Heading>
       </Center>
       <div className="login-container signup-container">
         <div className="logo-image">
@@ -41,7 +59,6 @@ const SignUp = () => {
           </Link>
         </div>
         <div>
-          {error && <div className="error">{error}</div>}
           <form onSubmit={handleSubmit}>
             <input
               type={"email"}
