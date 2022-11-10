@@ -10,6 +10,8 @@ import ImageSlider from "../Components/ImageSlider/ImageSlider";
 import DisplayCard from "../Components/CardDisplay/DisplayCard";
 import AdsStripe from "../Components/AdsStripe/AdsStripe";
 import DualCard from "../Components/DualCard/DualCard";
+import TrendingBrands from "../Components/TrendingBrands/TrendingBrands";
+import Footer from "../Components/Footer/Footer";
 const Home = () => {
   const images = { image1, image2, image3, image4 };
   const Authentication = useContext(AuthContext);
@@ -50,6 +52,8 @@ const Home = () => {
         <DisplayCard cardDetails={cardDetails} />
         <AdsStripe />
         <DualCard />
+        <TrendingBrands />
+        <Footer />
       </div>
     </>
   );

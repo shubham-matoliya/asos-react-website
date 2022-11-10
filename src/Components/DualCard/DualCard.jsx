@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./DualCard.css";
 const DualCard = () => {
   const cardContent = [
@@ -22,7 +23,9 @@ const DualCard = () => {
       {cardContent.map((el) => (
         <div>
           <div>
-            <img src={el.image} />
+            <Link to={"/products"}>
+              <img src={el.image} />
+            </Link>
           </div>
           <h1>{el.title}</h1>
           <p>{el.subtitle}</p>

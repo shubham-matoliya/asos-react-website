@@ -7,8 +7,12 @@
 }
 .home {
   width: 100vw;
-  height: 200vh;
   /* background-color: rgb(23, 0, 44); */
   background-color: white;
   color: white;
+}
+h1 {
+  font-size: 32px;
+  font-weight: 600;
+  columns: black;
 }

@@ -1,0 +1,29 @@
+.TrendingBrands-container {
+  width: 95vw;
+  margin: 30px auto;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+  /* border: 1px solid black; */
+}
+.TrendingBrands-container > div {
+  /* border: 1px solid black; */
+  transition: 0.5s all ease;
+  opacity: 0.5;
+}
+.TrendingBrands-container > div img {
+  width: 100%;
+  cursor: pointer;
+}
+.TrendingBrands-container > div:hover {
+  opacity: 1;
+}
+#brand-heading {
+  margin-top: 70px;
+  font-size: 28px;
+  font-family: "Roboto";
+  font-weight: 900;
+  text-align: center;
+  color: black;
+  text-transform: uppercase;
+}
