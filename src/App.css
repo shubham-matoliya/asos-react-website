@@ -1,0 +1,13 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-family: "Roboto Mono", monospace;
+}
+.home {
+  width: 100vw;
+  height: 200vh;
+  background-color: rgb(23, 0, 44);
+  color: white;
+}
