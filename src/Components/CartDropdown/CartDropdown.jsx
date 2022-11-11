@@ -2,14 +2,18 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../Context/CartContext/CartContext";
 import "./CartDropdown.css";
+import { useToast } from "@chakra-ui/react";
 const CartDropdown = () => {
-  const { cartItems } = useContext(CartContext);
+  const toast = useToast();
+  const { cartItems, subtotal, totalItems, removeItemFromCart } =
+    useContext(CartContext);
+  // console.log(totalItems);
   return (
     <div className="cart-box">
       <div className="cart-icon">
         <Link to={"/cart"}>
           <i className="fa-solid fa-cart-shopping" />
-          <span className="No-of-items">0</span>
+          <span className="No-of-items">{totalItems}</span>
         </Link>
       </div>
       <div className="cart-window">
@@ -36,13 +40,26 @@ const CartDropdown = () => {
                 </p>
               </div>
               <div className="cancel">
-                <i className="fa-solid fa-xmark"></i>
+                <i
+                  className="fa-solid fa-xmark"
+                  onClick={() => {
+                    removeItemFromCart(el);
+                    toast({
+                      title: "Item Removed!",
+                      description: "",
+                      status: "error",
+                      position: "top",
+                      duration: 5000,
+                      isClosable: true,
+                    });
+                  }}
+                ></i>
               </div>
             </div>
           ))}
         </div>
         <div className="subtotal">
-          <b>Subtotal:</b> $0.00
+          <b>Subtotal:</b> ${subtotal}
         </div>
         <div className="checkout">Checkout</div>
         <div className="view-cart">View Cart</div>

@@ -9,6 +9,7 @@ import SignUp from "../Pages/SignUp";
 import SingleProduct from "../Pages/SingleProduct";
 import Singleuser from "../Pages/Singleuser";
 import Wishlist from "../Pages/Wishlist";
+import ShoesPage from "../Pages/ShoesPage";
 const AllRoutes = () => {
   return (
     <Routes>
@@ -21,6 +22,7 @@ const AllRoutes = () => {
       <Route path="/signup" element={<SignUp />} />
       <Route path="/singleuser" element={<Singleuser />} />
       <Route path="/wishlist" element={<Wishlist />} />
+      <Route path="/shoes" element={<ShoesPage />} />
     </Routes>
   );
 };

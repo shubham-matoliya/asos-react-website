@@ -17,9 +17,26 @@
   cursor: pointer;
   transition: transform 0.5s;
 }
-img {
-  width: 100%;
-  height: auto;
+.parent .wishlist-icon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  /* border: 1px solid lightgray; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 35px;
+  color: lightgray;
+  z-index: 999;
+}
+.parent .wishlist-icon .fa-heart:hover {
+  color: red;
+}
+.parent .wishlist-icon:hover {
+  border: 1px solid transparent;
 }
 .parent > div {
   position: relative;

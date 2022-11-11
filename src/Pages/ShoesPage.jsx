@@ -1,18 +1,16 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../Components/Navbar/Navbar";
 import ProductCard from "../Components/ProductCard/ProductCard";
 import "./Products.css";
 import axios from "axios";
 
 import { Skeleton, SkeletonCircle, SkeletonText, Box } from "@chakra-ui/react";
-import { CartContext } from "../Context/CartContext/CartContext";
-const Products = () => {
+const ShoesPage = () => {
   const [products, setProducts] = useState([]);
   const [loading, setloading] = useState(false);
-  const { wishlistedItems } = useContext(CartContext);
   const fetchProducts = () => {
     setloading(true);
-    axios(`http://localhost:8080/products`).then((res) => {
+    axios(`http://localhost:8080/shoes`).then((res) => {
       setProducts(res.data);
       setloading(false);
     });
@@ -46,18 +44,11 @@ const Products = () => {
             </Box>
           </Box>
         ) : (
-          products.map((el) => {
-            const isWishlisted = wishlistedItems.find(({ id }) => el.id === id);
-            if (isWishlisted)
-              return (
-                <ProductCard product={el} wishliststate={true} key={el.id} />
-              );
-            else return <ProductCard product={el} key={el.id} />;
-          })
+          products.map((el) => <ProductCard product={el} key={el.id} />)
         )}
       </div>
     </>
   );
 };
 
-export default Products;
+export default ShoesPage;

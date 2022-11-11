@@ -1,3 +1,13 @@
+#navbar {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}
+#navbar-outer {
+  width: 100vw;
+  height: 112px;
+  border: 1px solid transparent;
+}
 .section-button {
   width: 8vw;
   font-size: larger;
@@ -80,7 +90,7 @@ a {
 .navbar-bottom > ul > li .menubar {
   position: absolute;
   width: 90vw;
-  height: 60vh;
+  height: 70vh;
   left: 5vw;
   top: 53px;
   padding: 15px;

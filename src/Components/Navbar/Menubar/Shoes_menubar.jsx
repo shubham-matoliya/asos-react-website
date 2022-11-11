@@ -27,7 +27,7 @@ const Shoes_menubar = () => {
           <ul>
             {list1.map((el) => (
               <li>
-                <Link to={"/products"}>{el}</Link>
+                <Link to={"/shoes"}>{el}</Link>
               </li>
             ))}
           </ul>
