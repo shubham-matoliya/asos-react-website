@@ -15,13 +15,14 @@ import {
   Center,
   Button,
 } from "@chakra-ui/react";
-
+import "../CartDropdown/CartDropdown.css";
 import { SearchIcon } from "@chakra-ui/icons";
 import imageAddress from "../../Assets/asos-logo.jpeg";
 import React, { useContext } from "react";
 import { Link, Navigate } from "react-router-dom";
 import "./Navbar.css";
 import { AuthContext } from "../../Context/AuthContext/AuthContextProvider";
+import CartDropdown from "../CartDropdown/CartDropdown";
 const NavbarTop = () => {
   const auth = useContext(AuthContext);
   const { user, logOut } = auth;
@@ -125,11 +126,16 @@ const NavbarTop = () => {
             <i className="fa-regular fa-heart" />
           </Link>
         </div>
-        <div>
-          <Link to={"/cart"}>
-            <i className="fa-solid fa-cart-shopping" />
-          </Link>
-        </div>
+        {/* <div className="cart-box">
+          <div className="cart-icon">
+            <Link to={"/cart"}>
+              <i className="fa-solid fa-cart-shopping" />
+              <span className="No-of-items">0</span>
+            </Link>
+          </div>
+          
+        </div> */}
+        <CartDropdown />
       </Flex>
     </Flex>
   );

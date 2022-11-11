@@ -1,0 +1,131 @@
+.singleproduct {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background: #fff;
+  width: 70vw;
+  height: 80vh;
+  margin: 3% auto;
+
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+
+  font-family: sans-serif;
+}
+.singleproduct img {
+  width: 78%;
+}
+.singleproduct > div:nth-child(1) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid red; */
+}
+.singleproduct > div:nth-child(2) {
+  padding: 40px;
+}
+.singleproduct h2 {
+  font-size: 26px;
+  text-align: center;
+  font-weight: 400;
+}
+.singleproduct p {
+  /* margin-left: 10%; */
+  font-size: 20px;
+  margin-top: 20px;
+}
+.singleproduct > div:nth-child(2) > .size {
+  /* border: 1px solid black; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin: auto;
+  margin-top: 15px;
+  /* text-align: left; */
+}
+/* .singleproduct > div:nth-child(2) > .size > label {
+  width: 50px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  font-size: 20px;
+}
+.singleproduct > div:nth-child(2) > .size > label:hover {
+  border: 1px solid #326b80;
+}
+.singleproduct > div:nth-child(2) > .size > label > input {
+  visibility: hidden;
+  position: absolute;
+}
+.singleproduct > div:nth-child(2) > .size > label > input + div {
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid transparent;
+  border-radius: 5px;
+}
+
+.singleproduct > div:nth-child(2) > .size > label > input:checked + div {
+  border: 2px solid #326b80;
+} */
+.singleproduct > div:nth-child(2) .size input {
+  display: none;
+}
+.singleproduct > div:nth-child(2) .size label {
+  border: 1px solid gray;
+  text-align: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-size: 26px;
+  padding: 8px;
+}
+.singleproduct > div:nth-child(2) .size label span {
+  width: 100%;
+  height: 100%;
+
+  text-align: center;
+}
+.singleproduct > div:nth-child(2) > .size input:checked + label {
+  border: 3px solid #326b80;
+}
+.singleproduct > div:nth-child(2) #qty {
+  margin-left: 10%;
+  padding: 8px 15px;
+  font-size: 20px;
+  border: 1px solid #326b80;
+  margin-top: 15px;
+}
+.singleproduct > div:nth-child(2) #qty:hover {
+  cursor: pointer;
+}
+.singleproduct > div:nth-child(2) > .quantity button {
+  margin-left: 25px;
+  font-size: 18px;
+  padding: 10px 22px;
+  background-color: #326b80;
+  border-radius: none;
+  border: 1px solid transparent;
+  color: white;
+}
+.singleproduct > div:nth-child(2) > .quantity button:hover {
+  background-color: transparent;
+  border: 1px solid #326b80;
+  color: #326b80;
+  cursor: pointer;
+}
+
+span#productid {
+  display: none;
+  margin-left: 10%;
+}

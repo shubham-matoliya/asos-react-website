@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+::before,
+::after {
+  box-sizing: border-box;
+}
+:root {
+  /* here we are defining global variable for dynamically change content in circle at cart icon  we will target this variable by JS*/
+  --after-content: "2";
+}
+.cart-box {
+  /* border: 1px solid red; */
+  display: block;
+  margin-right: 5%;
+  line-height: 1.5;
+  color: black;
+  /* border: 1px solid white; */
+}
+.fa-cart-shopping {
+  color: white;
+  cursor: pointer;
+}
+
+.cart-box .cart-window {
+  position: absolute;
+  width: 25%;
+  height: auto;
+  background-color: #fff;
+  box-shadow: -2px 2px 70px -25px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease-in;
+  margin-top: 10px;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 999;
+  right: 1%;
+  border: 1px solid lightgrey;
+}
+
+.cart-box:hover .cart-window {
+  visibility: visible;
+  opacity: 1;
+}
+.cart-box h2 {
+  font-size: x-large;
+  padding: 15px 10px;
+  font-size: 24px;
+  font-weight: 900;
+}
+.cart-box .cart-window .cart-wrapper {
+  /* as this div's height will keep increasing as we dynamically adding products and we dont want to increase height of our cart window hence we use: */
+  overflow-y: auto;
+  /* it will place vertical scroll bar whenever needed */
+  max-height: 250px;
+}
+.cart-box .cart-window .subtotal {
+  text-align: right;
+  padding: 5%;
+}
+
+.cart-box .cart-window .checkout,
+.cart-box .cart-window .view-cart {
+  width: 95%;
+  text-align: center;
+  cursor: pointer;
+  background-color: brown;
+  font-size: large;
+  color: white;
+  margin: 10px auto;
+  padding: 10px 15px;
+}
+.cart-box .cart-window .view-cart {
+  background-color: white;
+  color: brown;
+  border: 2px solid brown;
+}
+.cart-box .cart-window .cart-icon {
+  border: 1px solid blue;
+  text-align: right;
+  position: relative;
+  display: block;
+}
+.cart-box .cart-window .cart-item {
+  /* we want different width for each children hence we will use grid indtead of flex */
+  display: grid;
+  grid-template-columns: 3fr 6fr 1fr;
+  padding: 5% 2%;
+  border-bottom: 2px solid lightgray;
+}
+.cart-box .cart-window .cart-item img {
+  width: 100%;
+}
+.cart-box .cart-window .cart-item .details {
+  padding-left: 10%;
+}
+.cart-box .cart-window .cart-item h3 {
+  text-align: left;
+  margin-bottom: 5%;
+  font-size: 20px;
+  font-weight: 900;
+}
+.cart-box .cart-window .cart-item h3 + p {
+  font-size: 16px;
+  font-weight: 400;
+  text-align: left;
+}
+.cart-box .cart-window .cart-item .price {
+  display: block;
+  text-align: right;
+  margin-top: 15%;
+}
+.cart-box .cart-window .quantity,
+.cart-box .cart-window .size {
+  display: block;
+  margin-top: 5%;
+}
+
+.cart-box .cart-window .fa-xmark {
+  color: brown;
+  cursor: pointer;
+}
+.cart-box .cart-window .cancel {
+  text-align: right;
+  display: inline-block;
+  height: fit-content;
+  width: fit-content;
+  /* border: 1px solid red; */
+  padding: 3px;
+  margin-left: 20px;
+}
+.No-of-items {
+  /* content: var(--after-content); */
+  font-size: 14px;
+  width: 22px;
+  height: 22px;
+
+  display: inline-block;
+  text-align: center;
+  border-radius: 50%;
+  background-color: rgba(255, 0, 0, 0.908);
+  /* now to place it on cart icon we use position */
+  position: relative;
+  top: -20px;
+  right: 20%;
+  /* we have to make it dynamically appear and disappear by js */
+}
+/*   .cart-box .cart-window #size {
+  display: inline;
+} */
+.cart-box .fa-cart-shopping:hover {
+  color: rgb(193, 158, 158);
+}

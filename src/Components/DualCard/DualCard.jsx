@@ -23,7 +23,7 @@ const DualCard = () => {
       {cardContent.map((el) => (
         <div>
           <div>
-            <Link to={"/products"}>
+            <Link to={"/singleproducts"}>
               <img src={el.image} />
             </Link>
           </div>

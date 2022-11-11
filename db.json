@@ -6,5 +6,287 @@
       "author": "typicode"
     }
   ],
-  "users": []
+  "users": [],
+  "products": [
+    {
+      "id": 1,
+      "outImage": "https://images.urbndata.com/is/image/Anthropologie/4130647160057_031_b?$an-category$&fit=constrain&fmt=webp&hei=1046&qlt=80&wid=698",
+      "inImage": "https://images.urbndata.com/is/image/Anthropologie/4130647160057_031_b2?$an-category$&fit=constrain&fmt=webp&hei=1046&qlt=80&wid=698",
+      "cardDetails": "Robin Tiered Mini Dress",
+      "price": "180"
+    },
+    {
+      "id": 2,
+      "outImage": "https://images.urbndata.com/is/image/Anthropologie/4130916210094_000_b?$an-category$&fit=constrain&fmt=webp&hei=1046&qlt=80&wid=698",
+      "inImage": "https://images.urbndata.com/is/image/Anthropologie/4130916210094_000_b2?$an-category$&fit=constrain&fmt=webp&hei=1046&qlt=80&wid=698",
+      "cardDetails": "Maeve Halter-Neck Ruched Maxi Dress",
+      "price": "250"
+    },
+    {
+      "id": 3,
+      "outImage": "https://images.urbndata.com/is/image/Anthropologie/4130578570014_066_b?$an-category$&fit=constrain&fmt=webp&hei=1046&qlt=80&wid=698",
+      "inImage": "https://images.urbndata.com/is/image/Anthropologie/4130578570014_066_b2?$an-category$&fit=constrain&fmt=webp&hei=1046&qlt=80&wid=698",
+      "cardDetails": "The Somerset Mini Dress: Linen Edition",
+      "price": "200"
+    },
+    {
+      "id": 4,
+      "outImage": "https://images.urbndata.com/is/image/Anthropologie/4130728470001_034_b14?$an-category$&fit=constrain&fmt=webp&hei=1046&qlt=80&wid=698",
+      "inImage": "https://images.urbndata.com/is/image/Anthropologie/4130728470001_034_b2?$an-category$&fit=constrain&fmt=webp&hei=1046&qlt=80&wid=698",
+      "cardDetails": "Devotion Twins Embroidered Ella Tunic Dress",
+      "price": "270"
+    },
+    {
+      "id": 5,
+      "outImage": "https://images.urbndata.com/is/image/Anthropologie/4130578570013_040_b?$an-category$&fit=constrain&fmt=webp&hei=1046&qlt=80&wid=698",
+      "inImage": "https://images.urbndata.com/is/image/Anthropologie/4130578570013_040_b2?$an-category$&fit=constrain&fmt=webp&hei=1046&qlt=80&wid=698",
+      "cardDetails": "The Somerset Maxi Dress: Linen Edition",
+      "price": "170"
+    },
+    {
+      "id": 6,
+      "outImage": "https://images.urbndata.com/is/image/Anthropologie/4130647160135_010_c?$an-category$&fit=constrain&fmt=webp&hei=1046&qlt=80&wid=698",
+      "inImage": "https://images.urbndata.com/is/image/Anthropologie/4130647160135_010_c2?$an-category$&fit=constrain&fmt=webp&hei=1046&qlt=80&wid=698",
+      "cardDetails": "By Anthropologie Linen Wrap Mini Dress",
+      "price": "190"
+    },
+    {
+      "id": 7,
+      "outImage": "https://images.urbndata.com/is/image/Anthropologie/4130646420031_069_b2?$an-category$&fit=constrain&fmt=webp&hei=1046&qlt=80&wid=698",
+      "inImage": "https://images.urbndata.com/is/image/Anthropologie/4130646420031_069_b14?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=1080",
+      "cardDetails": "The Somerset Mini Dress",
+      "price": "210"
+    },
+    {
+      "id": 8,
+      "outImage": "https://images.urbndata.com/is/image/Anthropologie/4130370060048_040_b?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=1080",
+      "inImage": "https://images.urbndata.com/is/image/Anthropologie/4130370060048_040_b2?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=1080",
+      "cardDetails": "Tiered Ruffled Mini Dress",
+      "price": "240"
+    },
+    {
+      "id": 9,
+      "outImage": "https://images.urbndata.com/is/image/Anthropologie/4130551300180_035_b?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=1080",
+      "inImage": "https://images.urbndata.com/is/image/Anthropologie/4130551300180_035_b4?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=1080",
+      "cardDetails": "MISA Sleeveless V-Neck Ruffle Midi Dress",
+      "price": "180"
+    },
+    {
+      "id": 10,
+      "outImage": "https://images.urbndata.com/is/image/Anthropologie/4130647160129_072_b14?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=1080",
+      "inImage": "https://images.urbndata.com/is/image/Anthropologie/4130647160129_072_b15?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=1080",
+      "cardDetails": "The Somerset Mini Dress: Eyelet Edition",
+      "price": "160"
+    },
+    {
+      "id": 11,
+      "outImage": "https://images.urbndata.com/is/image/Anthropologie/4130646420009_068_b14?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=1080",
+      "inImage": "https://images.urbndata.com/is/image/Anthropologie/4130646420009_068_b3?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=1080",
+      "cardDetails": "The Somerset Maxi Dress",
+      "price": "170"
+    },
+    {
+      "id": 12,
+      "outImage": "https://images.urbndata.com/is/image/Anthropologie/4130646420009_011_b?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=1080",
+      "inImage": "https://images.urbndata.com/is/image/Anthropologie/4130646420009_011_b4?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=1080",
+      "cardDetails": "The Somerset Maxi Dress",
+      "price": "170"
+    },
+    {
+      "id": 13,
+      "outImage": "https://images.urbndata.com/is/image/Anthropologie/4130370060072_065_b?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=1080",
+      "inImage": "https://images.urbndata.com/is/image/Anthropologie/4130370060072_065_b3?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=1080",
+      "cardDetails": "The Somerset Maxi Dress",
+      "price": "190"
+    },
+    {
+      "id": 14,
+      "outImage": "https://images.urbndata.com/is/image/Anthropologie/4130370060072_063_b?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=1080",
+      "inImage": "https://images.urbndata.com/is/image/Anthropologie/4130370060072_063_b3?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=1080",
+      "cardDetails": "The Somerset Maxi Dress",
+      "price": "180"
+    },
+    {
+      "id": 15,
+      "outImage": "https://images.urbndata.com/is/image/Anthropologie/4130370060072_001_b?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=1080",
+      "inImage": "https://images.urbndata.com/is/image/Anthropologie/4130370060072_001_b3?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=1080",
+      "cardDetails": "The Somerset Maxi Dress",
+      "price": "160"
+    },
+    {
+      "id": 16,
+      "outImage": "https://images.urbndata.com/is/image/Anthropologie/4130578570013_010_c14?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=1080",
+      "inImage": "https://images.urbndata.com/is/image/Anthropologie/4130578570013_010_b3?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=1080",
+      "cardDetails": "The Somerset Maxi Dress: Linen Edition",
+      "price": "200"
+    },
+    {
+      "id": 17,
+      "outImage": "https://images.urbndata.com/is/image/Anthropologie/4130578570013_060_b?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=1080",
+      "inImage": "https://images.urbndata.com/is/image/Anthropologie/4130578570013_060_b4?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=1080",
+      "cardDetails": "The Somerset Maxi Dress: Linen Edition",
+      "price": "210"
+    },
+    {
+      "id": 18,
+      "outImage": "https://images.urbndata.com/is/image/Anthropologie/4130728470001_065_b?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=1080",
+      "inImage": "https://images.urbndata.com/is/image/Anthropologie/4130728470001_065_b3?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=1080",
+      "cardDetails": "Devotion Twins Embroidered Ella Tunic Dress",
+      "price": "250"
+    },
+    {
+      "id": 19,
+      "outImage": "https://images.urbndata.com/is/image/Anthropologie/4130728470001_015_b15?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=1080",
+      "inImage": "https://images.urbndata.com/is/image/Anthropologie/4130728470001_015_b2?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=1080",
+      "cardDetails": "Devotion Twins Embroidered Ella Tunic Dress",
+      "price": "230"
+    },
+    {
+      "id": 20,
+      "outImage": "https://images.urbndata.com/is/image/Anthropologie/4130728470001_105_b?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=1080",
+      "inImage": "https://images.urbndata.com/is/image/Anthropologie/4130728470001_105_b4?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=1080",
+      "cardDetails": "Devotion Twins Embroidered Ella Tunic Dress",
+      "price": "170"
+    },
+    {
+      "id": 21,
+      "outImage": "https://images.urbndata.com/is/image/Anthropologie/4130647160128_049_b14?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=1080",
+      "inImage": "https://images.urbndata.com/is/image/Anthropologie/4130647160128_049_b15?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=1080",
+      "cardDetails": "The Sleeveless Somerset Mini Dress: Poplin Edition",
+      "price": "170"
+    },
+    {
+      "id": 22,
+      "outImage": "https://images.urbndata.com/is/image/Anthropologie/4130728470001_042_b?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=1080",
+      "inImage": "https://images.urbndata.com/is/image/Anthropologie/4130728470001_042_b3?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=1080",
+      "cardDetails": "Devotion Twins Embroidered Ella Tunic Dress",
+      "price": "190"
+    },
+    {
+      "id": 23,
+      "outImage": "https://images.urbndata.com/is/image/Anthropologie/4130647160128_009_c?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=1080",
+      "inImage": "https://images.urbndata.com/is/image/Anthropologie/4130647160128_009_c2?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=1080",
+      "cardDetails": "The Sleeveless Somerset Mini Dress: Poplin Edition",
+      "price": "160"
+    },
+    {
+      "id": 24,
+      "outImage": "https://images.urbndata.com/is/image/Anthropologie/4130264840011_052_b?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=1080",
+      "inImage": "https://images.urbndata.com/is/image/Anthropologie/4130264840011_052_b2?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=1080",
+      "cardDetails": "The Somerset Mini Dress",
+      "price": "180"
+    },
+    {
+      "id": 25,
+      "outImage": "https://images.urbndata.com/is/image/Anthropologie/4130916210042_049_b?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=1080",
+      "inImage": "https://images.urbndata.com/is/image/Anthropologie/4130916210042_049_b3?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=1080",
+      "cardDetails": "The Marais Printed Chiffon Maxi Dress",
+      "price": "210"
+    },
+    {
+      "id": 26,
+      "outImage": "https://images.urbndata.com/is/image/Anthropologie/4130647160057_060_b?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=1080",
+      "inImage": "https://images.urbndata.com/is/image/Anthropologie/4130647160057_060_b3?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=1080",
+      "cardDetails": "Robin Tiered Mini Dress",
+      "price": "230"
+    },
+    {
+      "id": 27,
+      "outImage": "https://images.urbndata.com/is/image/Anthropologie/4130638280170_011_b?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=1080",
+      "inImage": "https://images.urbndata.com/is/image/Anthropologie/4130638280170_011_b3?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=1080",
+      "cardDetails": "Farm Rio Halter Maxi Dress",
+      "price": "250"
+    },
+    {
+      "id": 28,
+      "outImage": "https://images.urbndata.com/is/image/Anthropologie/4130089450012_049_b?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=1080",
+      "inImage": "https://images.urbndata.com/is/image/Anthropologie/4130089450012_049_b2?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=1080",
+      "cardDetails": "Pilcro Puff-Sleeve Tunic",
+      "price": "150"
+    },
+    {
+      "id": 29,
+      "outImage": "https://images.urbndata.com/is/image/Anthropologie/68889245_001_b?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=1080",
+      "inImage": "https://images.urbndata.com/is/image/Anthropologie/68889245_001_b3?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=1080",
+      "cardDetails": "By Anthropologie Gauzy Cutout Cover-Up Maxi Dress",
+      "price": "170"
+    },
+    {
+      "id": 30,
+      "outImage": "https://images.urbndata.com/is/image/Anthropologie/68130483_085_b?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=1080",
+      "inImage": "https://images.urbndata.com/is/image/Anthropologie/68130483_085_b2?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=1080",
+      "cardDetails": "Bl-nk Floral V-Neck Caftan",
+      "price": "200"
+    },
+    {
+      "id": 31,
+      "outImage": "https://images.urbndata.com/is/image/Anthropologie/4130344600154_066_b?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=1080",
+      "inImage": "https://images.urbndata.com/is/image/Anthropologie/4130344600154_066_b3?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=1080",
+      "cardDetails": "Forever That Girl Sheer Flowy Mini Dress",
+      "price": "160"
+    },
+    {
+      "id": 32,
+      "outImage": "https://images.urbndata.com/is/image/Anthropologie/4130331400015_010_b?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=1080",
+      "inImage": "https://images.urbndata.com/is/image/Anthropologie/4130331400015_010_b3?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=1080",
+      "cardDetails": "Not So Serious by Pallavi Mohan Deep-V Mini Dress",
+      "price": "180"
+    },
+    {
+      "id": 33,
+      "outImage": "https://images.urbndata.com/is/image/Anthropologie/4130916210078_049_b14?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=1080",
+      "inImage": "https://images.urbndata.com/is/image/Anthropologie/4130916210078_049_b?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=1080",
+      "cardDetails": "Emily Halter Mini Dress",
+      "price": "160"
+    },
+    {
+      "id": 34,
+      "outImage": "https://images.urbndata.com/is/image/Anthropologie/4130578570014_001_b?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=1080",
+      "inImage": "https://images.urbndata.com/is/image/Anthropologie/4130578570014_001_b4?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=1080",
+      "cardDetails": "The Somerset Mini Dress: Linen Edition",
+      "price": "220"
+    },
+    {
+      "id": 35,
+      "outImage": "https://images.urbndata.com/is/image/Anthropologie/68889245_011_b?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=1080",
+      "inImage": "https://images.urbndata.com/is/image/Anthropologie/68889245_011_b3?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=1080",
+      "cardDetails": "By Anthropologie Gauzy Cutout Cover-Up Maxi Dress",
+      "price": "240"
+    },
+    {
+      "id": 36,
+      "outImage": "https://images.urbndata.com/is/image/Anthropologie/4130231803171_001_b?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=1080",
+      "inImage": "https://images.urbndata.com/is/image/Anthropologie/4130231803171_001_b2?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=1080",
+      "cardDetails": "Byron Lars Carissima Sheath Dress",
+      "price": "200"
+    },
+    {
+      "id": 37,
+      "outImage": "https://images.urbndata.com/is/image/Anthropologie/4130916210077_049_b15?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=1080",
+      "inImage": "https://images.urbndata.com/is/image/Anthropologie/4130916210077_049_b2?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=1080",
+      "cardDetails": "V-Neck Plunge Tunic Mini Dress",
+      "price": "250"
+    },
+    {
+      "id": 38,
+      "outImage": "https://images.urbndata.com/is/image/Anthropologie/4130652010001_070_b?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=1080",
+      "inImage": "https://images.urbndata.com/is/image/Anthropologie/4130652010001_070_b4?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=1080",
+      "cardDetails": "Elyse Bias Slip Dress",
+      "price": "150"
+    },
+    {
+      "id": 39,
+      "outImage": "https://images.urbndata.com/is/image/Anthropologie/4130084320085_001_c?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=1080",
+      "inImage": "https://images.urbndata.com/is/image/Anthropologie/4130084320085_001_c3?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=1080",
+      "cardDetails": "By Anthropologie Deep V-Neck Vibrant Mini Dress",
+      "price": "190"
+    },
+    {
+      "id": 40,
+      "outImage": "https://images.urbndata.com/is/image/Anthropologie/4130647160057_068_b?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=1080",
+      "inImage": "https://images.urbndata.com/is/image/Anthropologie/4130647160057_068_b2?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=1080",
+      "cardDetails": "Robin Tiered Mini Dress",
+      "price": "155"
+    }
+  ]
 }
