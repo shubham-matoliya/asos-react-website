@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { CartContext } from "../../Context/CartContext/CartContext";
 import "./ProductCard.css";
 const ProductCard = ({ product }) => {
   const { id, outImage, inImage, cardDetails, price } = product;
+  const { addItemToCart } = useContext(CartContext);
+
+  const addProductToCart = () => addItemToCart(product);
   return (
     <div className="parent" id={id}>
       <div className="outer-image">
@@ -10,7 +14,9 @@ const ProductCard = ({ product }) => {
         <div className="inner-image">
           <img src={inImage} alt={cardDetails} />
         </div>
-        <button className="quickshop">Quickshop</button>
+        <button className="quickshop" onClick={addProductToCart}>
+          Quickshop
+        </button>
       </div>
       <Link to="/singleproducts" className="productName">
         {cardDetails}
