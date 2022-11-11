@@ -32,25 +32,37 @@ const New_menubar = () => {
         <div className="submenu2">
           <div>
             <div className="menubar-images">
-              <img src="https://images.asos-media.com/products/asos-design-curve-boyfriend-sweatshirt-in-white/13800847-1-white?$n_640w$&wid=634&fit=constrain" />
+              <img
+                alt="clothing"
+                src="https://images.asos-media.com/products/asos-design-curve-boyfriend-sweatshirt-in-white/13800847-1-white?$n_640w$&wid=634&fit=constrain"
+              />
             </div>
             <p>ASOS Curve & Plus size</p>
           </div>
           <div>
             <div className="menubar-images">
-              <img src="https://images.asos-media.com/products/asos-design-maternity-twist-and-drape-front-midi-dress-in-soft-pink/201449622-1-softpink?$n_640w$&wid=634&fit=constrain" />
+              <img
+                alt="clothing"
+                src="https://images.asos-media.com/products/asos-design-maternity-twist-and-drape-front-midi-dress-in-soft-pink/201449622-1-softpink?$n_640w$&wid=634&fit=constrain"
+              />
             </div>
             <p>Maternity</p>
           </div>
           <div>
             <div className="menubar-images">
-              <img src="https://images.asos-media.com/products/asos-design-petite-canvas-oversized-bomber-jacket-in-stone/201292760-1-stone?$n_640w$&wid=634&fit=constrain" />
+              <img
+                alt="clothing"
+                src="https://images.asos-media.com/products/asos-design-petite-canvas-oversized-bomber-jacket-in-stone/201292760-1-stone?$n_640w$&wid=634&fit=constrain"
+              />
             </div>
             <p>Petite</p>
           </div>
           <div>
             <div className="menubar-images">
-              <img src="https://images.asos-media.com/products/asos-design-tall-ultimate-jogger-in-neutral/200253856-1-neutral?$n_640w$&wid=634&fit=constrain" />
+              <img
+                alt="clothing"
+                src="https://images.asos-media.com/products/asos-design-tall-ultimate-jogger-in-neutral/200253856-1-neutral?$n_640w$&wid=634&fit=constrain"
+              />
             </div>
             <p>Tall</p>
           </div>
@@ -60,10 +72,16 @@ const New_menubar = () => {
         <h2>NEW EDITS</h2>
         <div className="submenu3">
           <Link to={"/products"}>
-            <img src="https://images.asos-media.com/products/asos-design-cami-embellished-maxi-dress-with-a-belt-in-gold/201597010-1-gold?$n_640w$&wid=634&fit=constrain" />
+            <img
+              alt="clothing"
+              src="https://images.asos-media.com/products/asos-design-cami-embellished-maxi-dress-with-a-belt-in-gold/201597010-1-gold?$n_640w$&wid=634&fit=constrain"
+            />
           </Link>
           <Link to={"/products"}>
-            <img src="https://images.asos-media.com/products/asos-design-halter-neck-backless-wide-leg-jumpsuit-in-magenta/202859384-1-magenta?$n_960w$&wid=952&fit=constrain" />
+            <img
+              alt="clothing"
+              src="https://images.asos-media.com/products/asos-design-halter-neck-backless-wide-leg-jumpsuit-in-magenta/202859384-1-magenta?$n_960w$&wid=952&fit=constrain"
+            />
           </Link>
         </div>
       </div>

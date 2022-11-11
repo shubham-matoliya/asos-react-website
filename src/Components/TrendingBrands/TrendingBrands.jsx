@@ -27,7 +27,7 @@ const TrendingBrands = () => {
       <div className="TrendingBrands-container">
         {brandImages.map((el) => (
           <div>
-            <img src={el.img} />
+            <img src={el.img} alt="Brand" />
           </div>
         ))}
       </div>

@@ -38,7 +38,10 @@ const Shoes_menubar = () => {
         <div className="submenu4">
           <div>
             <div className="img-container">
-              <img src="https://images.asos-media.com/products/asos-design-nipped-in-waist-mini-dress-in-green-boucle/203355826-1-greenboucle?$n_640w$&wid=634&fit=constrain" />
+              <img
+                alt="clothing"
+                src="https://images.asos-media.com/products/asos-design-nipped-in-waist-mini-dress-in-green-boucle/203355826-1-greenboucle?$n_640w$&wid=634&fit=constrain"
+              />
             </div>
             <div>
               <Link to={"/products"}>ASOS Design</Link>
@@ -46,7 +49,10 @@ const Shoes_menubar = () => {
           </div>
           <div>
             <div className="img-container">
-              <img src="https://images.asos-media.com/products/asos-design-high-neck-shirred-pleated-maxi-dress-with-frill-edge-in-paisley-print/202935387-1-paisleyprint?$n_640w$&wid=634&fit=constrain" />
+              <img
+                alt="clothing"
+                src="https://images.asos-media.com/products/asos-design-high-neck-shirred-pleated-maxi-dress-with-frill-edge-in-paisley-print/202935387-1-paisleyprint?$n_640w$&wid=634&fit=constrain"
+              />
             </div>
             <div>
               {" "}
@@ -55,7 +61,10 @@ const Shoes_menubar = () => {
           </div>
           <div>
             <div className="img-container">
-              <img src="https://content.asos-media.com/-/media/hubs/wedding/2021/jpeg/feat-cat/global/bridal_featcat_870x1110_dress2.jpg" />
+              <img
+                alt="clothing"
+                src="https://content.asos-media.com/-/media/hubs/wedding/2021/jpeg/feat-cat/global/bridal_featcat_870x1110_dress2.jpg"
+              />
             </div>
             <div>
               {" "}
@@ -64,7 +73,10 @@ const Shoes_menubar = () => {
           </div>
           <div>
             <div className="img-container">
-              <img src="https://images.asos-media.com/products/asos-design-satin-maxi-dress-with-batwing-sleeve-and-wrap-waist-in-black/201711343-1-black?$n_640w$&wid=634&fit=constrain" />
+              <img
+                alt="clothing"
+                src="https://images.asos-media.com/products/asos-design-satin-maxi-dress-with-batwing-sleeve-and-wrap-waist-in-black/201711343-1-black?$n_640w$&wid=634&fit=constrain"
+              />
             </div>
             <div>
               {" "}
@@ -73,7 +85,10 @@ const Shoes_menubar = () => {
           </div>
           <div>
             <div className="img-container">
-              <img src="https://images.asos-media.com/products/asos-design-structured-satin-cargo-jumpsuit-in-ivory/203567159-1-ivory?$n_640w$&wid=634&fit=constrain" />
+              <img
+                alt="clothing"
+                src="https://images.asos-media.com/products/asos-design-structured-satin-cargo-jumpsuit-in-ivory/203567159-1-ivory?$n_640w$&wid=634&fit=constrain"
+              />
             </div>
             <div>
               {" "}
@@ -85,10 +100,16 @@ const Shoes_menubar = () => {
       <div>
         <div className="submenu3">
           <Link to={"/products"}>
-            <img src="https://images.asos-media.com/products/puma-cali-dream-trainers-in-white-and-oatmeal/203883258-1-whiteoatmeal?$n_640w$&wid=634&fit=constrain" />
+            <img
+              alt="clothing"
+              src="https://images.asos-media.com/products/puma-cali-dream-trainers-in-white-and-oatmeal/203883258-1-whiteoatmeal?$n_640w$&wid=634&fit=constrain"
+            />
           </Link>
           <Link to={"/products"}>
-            <img src="https://images.asos-media.com/products/reebok-classic-club-c-vintage-trainers-in-chalk-with-green/202748018-1-whitegreen?$n_640w$&wid=634&fit=constrain" />
+            <img
+              alt="clothing"
+              src="https://images.asos-media.com/products/reebok-classic-club-c-vintage-trainers-in-chalk-with-green/202748018-1-whitegreen?$n_640w$&wid=634&fit=constrain"
+            />
           </Link>
         </div>
       </div>

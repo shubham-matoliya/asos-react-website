@@ -35,7 +35,7 @@ const Dropdown = () => {
     <ul class="menu">
       <li>
         <div id="current-flag">
-          <img src={flag} />
+          <img src={flag} alt={`${country} map`} />
           <span>{country}</span>
           <i className="fa-solid fa-chevron-down"></i>
         </div>
@@ -44,7 +44,7 @@ const Dropdown = () => {
           {choices.map((el) => (
             <li onClick={(e) => setDetails(e)}>
               <div id="select-country">
-                <img src={el.flag} />
+                <img src={el.flag} alt={`${el.country} map`} />
                 <span>{el.country}</span>
               </div>
             </li>

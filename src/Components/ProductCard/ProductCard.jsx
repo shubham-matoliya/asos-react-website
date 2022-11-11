@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./ProductCard.css";
 const ProductCard = ({ product }) => {
   const { id, outImage, inImage, cardDetails, price } = product;
@@ -11,12 +12,12 @@ const ProductCard = ({ product }) => {
         </div>
         <button className="quickshop">Quickshop</button>
       </div>
-      <a href="#" className="productName">
+      <Link to="/singleproducts" className="productName">
         {cardDetails}
-      </a>
-      <a href="#">
+      </Link>
+      <Link to="/singleproducts">
         $<span className="price">{price}</span>
-      </a>
+      </Link>
     </div>
   );
 };

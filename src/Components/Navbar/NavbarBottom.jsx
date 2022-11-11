@@ -1,18 +1,18 @@
-import { Flex, Box, Center } from "@chakra-ui/react";
-import React, { useReducer, useState } from "react";
-import Accessories_menubar from "./Menubar/Accessories_menubar";
-import Autmn_menubar from "./Menubar/Autmn_menubar";
-import Brands_menubar from "./Menubar/Brands_menubar";
+import { Flex } from "@chakra-ui/react";
+import React, { useReducer } from "react";
+// import Accessories_menubar from "./Menubar/Accessories_menubar";
+// import Autmn_menubar from "./Menubar/Autmn_menubar";
+// import Brands_menubar from "./Menubar/Brands_menubar";
 import Clothing_menubar from "./Menubar/Clothing_menubar";
 import Dresses_menubar from "./Menubar/Dresses_menubar";
-import FaceBody_menubar from "./Menubar/FaceBody_menubar";
-import Gifting_menubar from "./Menubar/Gifting_menubar";
-import Marketplace_menubar from "./Menubar/Marketplace_menubar";
+// import FaceBody_menubar from "./Menubar/FaceBody_menubar";
+// import Gifting_menubar from "./Menubar/Gifting_menubar";
+// import Marketplace_menubar from "./Menubar/Marketplace_menubar";
 import New_menubar from "./Menubar/New_menubar";
 import Sale_menubar from "./Menubar/Sale_menubar";
 import Shoes_menubar from "./Menubar/Shoes_menubar";
-import Sportswear_menubar from "./Menubar/Sportswear_menubar";
-import Topshop_menubar from "./Menubar/Topshop_menubar";
+// import Sportswear_menubar from "./Menubar/Sportswear_menubar";
+// import Topshop_menubar from "./Menubar/Topshop_menubar";
 import Menubar, { ACTIONS } from "./Menubar";
 import { Link } from "react-router-dom";
 const menubar_reducer = (state, action) => {

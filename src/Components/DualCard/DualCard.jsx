@@ -24,7 +24,7 @@ const DualCard = () => {
         <div>
           <div>
             <Link to={"/singleproducts"}>
-              <img src={el.image} />
+              <img src={el.image} alt={el.title} />
             </Link>
           </div>
           <h1>{el.title}</h1>
