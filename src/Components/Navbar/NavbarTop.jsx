@@ -92,7 +92,9 @@ const NavbarTop = () => {
               <div>
                 <i className="fa-solid fa-bag-shopping"></i>
               </div>
-              <div>My Orders</div>
+              <div>
+                <Link to={"/orders"}>My Orders</Link>
+              </div>
             </div>
             <div className="login-menu">
               <div>

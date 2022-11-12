@@ -21,11 +21,11 @@
 }
 .item-details h2 {
   font-weight: 900;
-  font-size: 24px;
+  font-size: 20px;
   text-align: left;
 }
 .item-details p {
-  font-size: 20px;
+  font-size: 18px;
   text-align: left;
 }
 .item-details > div {
@@ -33,7 +33,7 @@
   justify-content: center;
   align-items: center;
   gap: 30px;
-  font-size: 22px;
+  font-size: 18px;
 }
 .item-details > div button {
   border: none;

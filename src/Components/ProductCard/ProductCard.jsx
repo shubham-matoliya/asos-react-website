@@ -52,9 +52,13 @@ const ProductCard = ({ product, wishliststate = false }) => {
             }}
           ></i>
         </div>
-        <img src={outImage} alt={cardDetails} />
+        <Link to={`/products/${id}`}>
+          <img src={outImage} alt={cardDetails} />
+        </Link>
         <div className="inner-image">
-          <img src={inImage} alt={cardDetails} />
+          <Link to={`/products/${id}`}>
+            <img src={inImage} alt={cardDetails} />
+          </Link>
         </div>
         <button
           className="quickshop"
@@ -72,10 +76,10 @@ const ProductCard = ({ product, wishliststate = false }) => {
           Quickshop
         </button>
       </div>
-      <Link to="/singleproducts" className="productName">
+      <Link to={`/products/${id}`} className="productName">
         {cardDetails}
       </Link>
-      <Link to="/singleproducts">
+      <Link to={`/products/${id}`}>
         $<span className="price">{price}</span>
       </Link>
     </div>

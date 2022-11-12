@@ -1,13 +1,36 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+
+import { CartContext } from "../../Context/CartContext/CartContext";
 import "./CartItem.css";
-const CartItem = ({ image, title, price, quantity }) => {
+const CartItem = ({ product, isOrder }) => {
+  const { id, outImage, cardDetails, price, quantity, size } = product;
+  const { addRemoveItem } = useContext(CartContext);
+  const [item, setItem] = useState(product);
+  // console.log("quantity changed", item);
+  let category;
+  if (id <= 40) category = "products";
+  else if (id > 40 && id <= 106) category = "shoes";
+  useEffect(() => {
+    addRemoveItem(item);
+  }, [item]);
   return (
     <div className="incart-item">
       <div>
-        <img src={image} />
+        <img src={outImage} />
       </div>
       <div className="item-details">
-        <h2>{title}</h2>
+        <h2>{cardDetails}</h2>
+        <p>
+          <b>Size: </b>
+          {product.size ? (
+            product.size
+          ) : (
+            <Link style={{ color: "red" }} to={`/${category}/${id}`}>
+              Please select size
+            </Link>
+          )}
+        </p>
         <p>
           <b>Price: </b>${price}
         </p>
@@ -15,13 +38,21 @@ const CartItem = ({ image, title, price, quantity }) => {
           <span>
             <b>Quantity: </b>
           </span>
-          <button>
-            <span>-</span>
-          </button>
-          <span>{quantity}</span>
-          <button>
-            <span>+</span>
-          </button>
+          {!isOrder ? (
+            <button
+              onClick={() => setItem({ ...item, quantity: item.quantity - 1 })}
+            >
+              <span>-</span>
+            </button>
+          ) : null}
+          <span>{item.quantity}</span>
+          {!isOrder ? (
+            <button
+              onClick={() => setItem({ ...item, quantity: item.quantity + 1 })}
+            >
+              <span>+</span>
+            </button>
+          ) : null}
         </div>
       </div>
     </div>

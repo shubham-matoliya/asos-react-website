@@ -11,7 +11,7 @@
   font-family: sans-serif;
 }
 .singleproduct img {
-  width: 78%;
+  width: 60%;
 }
 .singleproduct > div:nth-child(1) {
   display: flex;
@@ -41,6 +41,17 @@
   margin: auto;
   margin-top: 15px;
   /* text-align: left; */
+}
+.singleproduct > div:nth-child(1) {
+  position: relative;
+  cursor: pointer;
+}
+.singleproduct > div:nth-child(1) .outImage {
+  position: absolute;
+}
+.singleproduct > div:nth-child(1) .outImage:hover {
+  visibility: hidden;
+  opacity: 0;
 }
 /* .singleproduct > div:nth-child(2) > .size > label {
   width: 50px;

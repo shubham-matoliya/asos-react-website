@@ -11,6 +11,9 @@ const CartContextProvider = ({ children }) => {
   const [subtotal, setSubtotal] = useState(
     +localStorage.getItem("asos-subtotal") || 0
   );
+  const [discountedPrice, setDiscountedPrice] = useState(0);
+  const applyDiscount = (discount) =>
+    setDiscountedPrice(eval(subtotal * ((100 - discount) / 100)).toFixed(2));
 
   const totalItems = cartItems.reduce((total, curr) => {
     return total + curr.quantity;
@@ -26,6 +29,11 @@ const CartContextProvider = ({ children }) => {
     localStorage.setItem("wishlisted-items", JSON.stringify(wishlistedItems));
   }, [cartItems, wishlistedItems]);
 
+  const [orders, setOrders] = useState([]);
+  const checkoutCart = () => {
+    setOrders(cartItems);
+    setCartItems([]);
+  };
   const removeItemFromCart = (productToRemove) => {
     setCartItems(removeCartItem(cartItems, productToRemove));
   };
@@ -34,6 +42,33 @@ const CartContextProvider = ({ children }) => {
   };
   const addItemToCart = (productToAdd) => {
     setCartItems(addCartItem(cartItems, productToAdd));
+  };
+  const addSingleItemToCart = (productToAdd) => {
+    setCartItems(addSingleItem(cartItems, productToAdd));
+  };
+  const addRemoveItem = (productToAdd) => {
+    setCartItems(
+      cartItems.map((el) =>
+        el.id === productToAdd.id
+          ? { ...el, quantity: productToAdd.quantity, size: productToAdd.size }
+          : el
+      )
+    );
+  };
+  const addSingleItem = (cartItems, productToAdd) => {
+    const itemExist = cartItems.find((el) => el.id === productToAdd.id);
+    if (itemExist) {
+      return cartItems.map((el) =>
+        el.id === productToAdd.id
+          ? {
+              ...el,
+              quantity: +el.quantity + Number(productToAdd.quantity),
+              size: productToAdd.size,
+            }
+          : el
+      );
+    }
+    return [...cartItems, { ...productToAdd }];
   };
   const addCartItem = (cartItems, productToAdd) => {
     const existingCartItem = cartItems.find((el) => el.id === productToAdd.id);
@@ -64,6 +99,12 @@ const CartContextProvider = ({ children }) => {
         addItemToWishList,
         removeItemFromWishlist,
         wishlistedItems,
+        addSingleItemToCart,
+        addRemoveItem,
+        applyDiscount,
+        discountedPrice,
+        checkoutCart,
+        orders,
       }}
     >
       {children}

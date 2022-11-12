@@ -1,0 +1,49 @@
+.discount {
+  width: 95%;
+  margin: 10px auto;
+
+  border-radius: 5px;
+  font-size: 14px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.discount label p {
+  background-color: rgb(250, 249, 249);
+  border: 1px solid rgb(45, 45, 137);
+  margin: auto;
+  width: 40%;
+  padding: 10px;
+  border-style: dashed;
+  text-align: center;
+}
+.discount span {
+  /* border: 1px solid black; */
+  margin-left: 20%;
+  font-weight: 900;
+  font-size: 24px;
+}
+.discount input {
+  display: none;
+}
+.discount input:checked + label {
+  border: 2px solid green;
+  color: green;
+  font-weight: 600;
+}
+.discount label {
+  background-color: rgb(241, 239, 239);
+  width: 100%;
+  height: 60px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0px;
+  cursor: pointer;
+}
