@@ -10,6 +10,7 @@ import SingleProduct from "../Pages/SingleProduct";
 import Singleuser from "../Pages/Singleuser";
 import Wishlist from "../Pages/Wishlist";
 import ShoesPage from "../Pages/ShoesPage";
+import PrivateRouteProvider from "../Components/PrivateAuth/PrivateRoute";
 const AllRoutes = () => {
   return (
     <Routes>
@@ -20,8 +21,22 @@ const AllRoutes = () => {
       <Route path="/cart" element={<Cart />} />
       <Route path="/checkout" element={<Checkout />} />
       <Route path="/signup" element={<SignUp />} />
-      <Route path="/singleuser" element={<Singleuser />} />
-      <Route path="/wishlist" element={<Wishlist />} />
+      <Route
+        path="/singleuser"
+        element={
+          <PrivateRouteProvider>
+            <Singleuser />
+          </PrivateRouteProvider>
+        }
+      />
+      <Route
+        path="/wishlist"
+        element={
+          <PrivateRouteProvider>
+            <Wishlist />
+          </PrivateRouteProvider>
+        }
+      />
       <Route path="/shoes" element={<ShoesPage />} />
     </Routes>
   );

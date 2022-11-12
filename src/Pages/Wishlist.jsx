@@ -6,8 +6,8 @@ import "./Products.css";
 import ProductCard from "../Components/ProductCard/ProductCard";
 
 const Wishlist = () => {
-  const { wishlistedItems, setWishliastedItems } = useContext(CartContext);
-  console.log("your wishlist is: ", wishlistedItems);
+  const { wishlistedItems } = useContext(CartContext);
+  // console.log("your wishlist is: ", wishlistedItems);
   return (
     <>
       <Navbar />
