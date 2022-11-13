@@ -53,7 +53,14 @@ const AllRoutes = () => {
           </PrivateRouteProvider>
         }
       />
-      <Route path="/adminpanel" element={<AdminPanel />} />
+      <Route
+        path="/adminpanel"
+        element={
+          <PrivateRouteProvider>
+            <AdminPanel />
+          </PrivateRouteProvider>
+        }
+      />
       <Route
         path="/wishlist"
         element={
