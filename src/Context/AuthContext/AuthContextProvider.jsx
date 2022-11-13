@@ -10,6 +10,7 @@ import {
 import { Auth } from "../../Firebase/firebase";
 export const AuthContext = createContext();
 const AuthContextProvider = ({ children }) => {
+  const [isAuth, setisAuth] = useState(localStorage.getItem("isAuth") || false);
   const [user, setUser] = useState("");
   const [isAdmin, setIsAdmin] = useState(
     localStorage.getItem("admin-status") || false
@@ -23,15 +24,22 @@ const AuthContextProvider = ({ children }) => {
     return createUserWithEmailAndPassword(Auth, email, password);
   }
   function logIn(email, password) {
+    setisAuth(true);
+
+    localStorage.setItem("isAuth", true);
     return signInWithEmailAndPassword(Auth, email, password);
   }
   function logOut() {
     signOut(Auth);
+    setisAuth(false);
+    localStorage.setItem("isAuth", false);
     setIsAdmin(false);
     localStorage.setItem("admin-status", false);
   }
   function googleSignIn() {
     const google_Auth_Provider = new GoogleAuthProvider();
+    setisAuth(true);
+    localStorage.setItem("isAuth", true);
     return signInWithPopup(Auth, google_Auth_Provider);
   }
   useEffect(() => {
@@ -53,6 +61,7 @@ const AuthContextProvider = ({ children }) => {
         googleSignIn,
         setUserAsAdmin,
         isAdmin,
+        isAuth,
       }}
     >
       {children}

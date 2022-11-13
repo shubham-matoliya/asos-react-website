@@ -15,12 +15,12 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-
+  clearInterval(+localStorage.getItem("setIntervalID"));
   const navigate = useNavigate();
   const authentication = useContext(AuthContext);
   const { logIn, googleSignIn, setUserAsAdmin, isAdmin } = authentication;
   const toast = useToast();
-  console.log(isAdmin);
+  console.log("isAdmin is ", isAdmin);
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");

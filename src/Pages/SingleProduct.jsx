@@ -12,6 +12,8 @@ const SingleProduct = () => {
   const [item, setItem] = useState(null);
   const { addSingleItemToCart } = useContext(CartContext);
   const [product, setProduct] = useState(null);
+  clearInterval(+localStorage.getItem("setIntervalID"));
+
   // console.log(id);
   useEffect(() => {
     axios(`http://localhost:8080/${category}/${id}`).then((res) => {
@@ -99,7 +101,7 @@ const SingleProduct = () => {
                 name=""
                 id="qty"
                 onChange={(e) =>
-                  setProduct({ ...product, quantity: e.target.value })
+                  setProduct({ ...product, quantity: +e.target.value })
                 }
               >
                 <option value="1">1</option>

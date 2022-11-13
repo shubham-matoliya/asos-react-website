@@ -4,11 +4,11 @@ import { AuthContext } from "../../Context/AuthContext/AuthContextProvider";
 import { useToast } from "@chakra-ui/react";
 const PrivateRouteProvider = ({ children }) => {
   const toast = useToast();
-  const { user } = useContext(AuthContext);
+  const { user, isAuth } = useContext(AuthContext);
   const navigate = useNavigate();
 
   {
-    if (!user) {
+    if (!isAuth) {
       toast({
         title: `Please login to visit that page`,
         status: "info",

@@ -7,6 +7,8 @@ import CartItem from "../Components/CartItem/CartItem";
 const Orders = () => {
   const { orders } = useContext(CartContext);
   console.log("orders are", orders);
+  clearInterval(+localStorage.getItem("setIntervalID"));
+
   return (
     <>
       <Navbar />

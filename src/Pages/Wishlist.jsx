@@ -8,6 +8,8 @@ import ProductCard from "../Components/ProductCard/ProductCard";
 const Wishlist = () => {
   const { wishlistedItems } = useContext(CartContext);
   // console.log("your wishlist is: ", wishlistedItems);
+  clearInterval(+localStorage.getItem("setIntervalID"));
+
   return (
     <>
       <Navbar />

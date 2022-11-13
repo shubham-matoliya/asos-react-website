@@ -24,6 +24,8 @@ const CartPage = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const cancelRef = React.useRef();
   const navigate = useNavigate();
+  clearInterval(+localStorage.getItem("setIntervalID"));
+
   return (
     <>
       <Navbar />
@@ -113,7 +115,9 @@ const CartPage = () => {
                         duration: 6000,
                       });
                       onClose();
-                      navigate("/");
+                      setTimeout(() => {
+                        navigate("/");
+                      }, 3000);
                     }}
                     ml={3}
                   >

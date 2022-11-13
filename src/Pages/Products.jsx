@@ -15,6 +15,7 @@ const Products = () => {
   const [order, setOrder] = useState("asc");
   const [total, setTotal] = useState(0);
   const newarr = new Array(total).fill(0);
+  clearInterval(+localStorage.getItem("setIntervalID"));
 
   const { wishlistedItems } = useContext(CartContext);
   const fetchProducts = (page = 1, limit = 10, order) => {

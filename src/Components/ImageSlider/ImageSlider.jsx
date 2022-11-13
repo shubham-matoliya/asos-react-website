@@ -1,14 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Slider.css";
 const ImageSlider = ({ images }) => {
-  // var counter = 1;
-  // setInterval(function () {
-  //   document.getElementById("radio" + counter).checked = true;
-  //   counter++;
-  //   if (counter > 4) {
-  //     counter = 1;
-  //   }
-  // }, 3000);
+  var counter = 1;
+  const intervalId = setInterval(function () {
+    document.getElementById(`radio${counter}`).checked = true;
+    counter++;
+    if (counter > 4) {
+      counter = 1;
+    }
+  }, 3000);
+  localStorage.setItem("setIntervalID", JSON.stringify(intervalId));
+
+  console.log("setInterval id is", intervalId);
+
   return (
     <div className="slider-container">
       <div className="slider">

@@ -8,6 +8,8 @@ import { Skeleton, SkeletonCircle, SkeletonText, Box } from "@chakra-ui/react";
 const ShoesPage = () => {
   const [products, setProducts] = useState([]);
   const [loading, setloading] = useState(false);
+  clearInterval(+localStorage.getItem("setIntervalID"));
+
   const fetchProducts = () => {
     setloading(true);
     axios(`http://localhost:8080/shoes`).then((res) => {

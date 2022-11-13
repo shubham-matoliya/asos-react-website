@@ -111,6 +111,8 @@ const AdminPanel = () => {
   const updatefun = () => {
     getProducts();
   };
+  clearInterval(+localStorage.getItem("setIntervalID"));
+
   useEffect(() => {
     getProducts();
     console.log("items received", itemsReceived);

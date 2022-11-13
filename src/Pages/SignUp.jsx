@@ -16,7 +16,7 @@ const SignUp = () => {
   const [error, setError] = useState("");
   const navigate = useNavigate();
   const toast = useToast();
-
+  clearInterval(+localStorage.getItem("setIntervalID"));
   const Authentication = useContext(AuthContext);
   const { signUp, logIn } = Authentication;
   // console.log("Authentication is ", Authentication);

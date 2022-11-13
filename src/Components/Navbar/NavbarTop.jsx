@@ -18,6 +18,7 @@ import CartDropdown from "../CartDropdown/CartDropdown";
 const NavbarTop = () => {
   const auth = useContext(AuthContext);
   const { user, logOut, isAdmin } = auth;
+  console.log("isAdmin is", isAdmin);
   const logoutHandler = async () => {
     try {
       await logOut();
@@ -79,7 +80,7 @@ const NavbarTop = () => {
               <Link to={"/login"}>
                 {user ? user.displayName || "Guest" : "Login"}
               </Link>
-              <p className="admin-text">{isAdmin ? "admin" : ""}</p>
+              <p className="admin-text">{!isAdmin ? null : "admin"}</p>
             </div>
             <div className="login-menu">
               <div>
@@ -97,7 +98,7 @@ const NavbarTop = () => {
                 <Link to={"/orders"}>My Orders</Link>
               </div>
             </div>
-            {isAdmin && user ? (
+            {isAdmin ? (
               <div className="login-menu">
                 <div>
                   <i className="fa-solid fa-user-tie"></i>

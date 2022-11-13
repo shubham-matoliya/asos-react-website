@@ -5,6 +5,8 @@ import Navbar from "../Components/Navbar/Navbar";
 
 const Singleuser = () => {
   const auth = useContext(AuthContext);
+  clearInterval(+localStorage.getItem("setIntervalID"));
+
   const { user } = auth;
   return (
     <>

@@ -15,7 +15,9 @@ import Footer from "../Components/Footer/Footer";
 const Home = () => {
   const images = { image1, image2, image3, image4 };
   const Authentication = useContext(AuthContext);
-  const { user, logOut } = Authentication;
+  const { user, logOut, isAuth, isAdmin } = Authentication;
+  console.log("isAuth is", isAuth);
+  console.log("isAdmin is ", isAdmin);
   console.log(user);
   if (user) console.log("user is ", user.uid, user.email);
   const cardDetails = [
