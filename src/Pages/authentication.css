@@ -112,3 +112,15 @@ p {
   color: red;
   font-weight: 400;
 }
+.admin-check {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.admin-check input {
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+}

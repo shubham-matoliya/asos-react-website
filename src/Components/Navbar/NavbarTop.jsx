@@ -17,7 +17,7 @@ import { AuthContext } from "../../Context/AuthContext/AuthContextProvider";
 import CartDropdown from "../CartDropdown/CartDropdown";
 const NavbarTop = () => {
   const auth = useContext(AuthContext);
-  const { user, logOut } = auth;
+  const { user, logOut, isAdmin } = auth;
   const logoutHandler = async () => {
     try {
       await logOut();
@@ -79,6 +79,7 @@ const NavbarTop = () => {
               <Link to={"/login"}>
                 {user ? user.displayName || "Guest" : "Login"}
               </Link>
+              <p className="admin-text">{isAdmin ? "admin" : ""}</p>
             </div>
             <div className="login-menu">
               <div>
@@ -96,6 +97,16 @@ const NavbarTop = () => {
                 <Link to={"/orders"}>My Orders</Link>
               </div>
             </div>
+            {isAdmin && user ? (
+              <div className="login-menu">
+                <div>
+                  <i className="fa-solid fa-user-tie"></i>
+                </div>
+                <div>
+                  <Link to={"/adminpanel"}>Admin Panel</Link>
+                </div>
+              </div>
+            ) : null}
             <div className="login-menu">
               <div>
                 <i className="fa-regular fa-circle-question"></i>

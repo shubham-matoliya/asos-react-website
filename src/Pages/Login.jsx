@@ -18,8 +18,9 @@ const Login = () => {
 
   const navigate = useNavigate();
   const authentication = useContext(AuthContext);
-  const { logIn, googleSignIn } = authentication;
+  const { logIn, googleSignIn, setUserAsAdmin, isAdmin } = authentication;
   const toast = useToast();
+  console.log(isAdmin);
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
@@ -83,7 +84,7 @@ const Login = () => {
         </div>
         <div>
           {error && <div className="error">{error}</div>}
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={() => handleSubmit()}>
             <input
               type={"email"}
               required
@@ -95,6 +96,15 @@ const Login = () => {
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Enter Password"
             />
+            <div className="admin-check">
+              <input
+                type="checkbox"
+                placeholder="Login as admin"
+                onClick={() => setUserAsAdmin()}
+                id="admin"
+              />
+              <label htmlFor="admin">Login as admin</label>
+            </div>
             <input type={"submit"} id="submit" />
           </form>
 

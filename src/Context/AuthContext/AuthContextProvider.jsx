@@ -11,7 +11,14 @@ import { Auth } from "../../Firebase/firebase";
 export const AuthContext = createContext();
 const AuthContextProvider = ({ children }) => {
   const [user, setUser] = useState("");
+  const [isAdmin, setIsAdmin] = useState(
+    localStorage.getItem("admin-status") || false
+  );
 
+  function setUserAsAdmin() {
+    setIsAdmin(!isAdmin);
+    localStorage.setItem("admin-status", isAdmin);
+  }
   function signUp(email, password) {
     return createUserWithEmailAndPassword(Auth, email, password);
   }
@@ -20,6 +27,8 @@ const AuthContextProvider = ({ children }) => {
   }
   function logOut() {
     signOut(Auth);
+    setIsAdmin(false);
+    localStorage.setItem("admin-status", false);
   }
   function googleSignIn() {
     const google_Auth_Provider = new GoogleAuthProvider();
@@ -42,6 +51,8 @@ const AuthContextProvider = ({ children }) => {
         logIn,
         logOut,
         googleSignIn,
+        setUserAsAdmin,
+        isAdmin,
       }}
     >
       {children}

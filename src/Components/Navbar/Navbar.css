@@ -166,3 +166,13 @@ a {
   padding: 5px 0;
   text-align: center;
 }
+.login-user {
+  position: relative;
+}
+.login-user .admin-text {
+  position: absolute;
+  top: 0;
+  right: 5px;
+  font-size: 14px;
+  color: red;
+}

@@ -1,14 +1,14 @@
 import React from "react";
 import "./Slider.css";
 const ImageSlider = ({ images }) => {
-  var counter = 1;
-  setInterval(function () {
-    document.getElementById("radio" + counter).checked = true;
-    counter++;
-    if (counter > 4) {
-      counter = 1;
-    }
-  }, 3000);
+  // var counter = 1;
+  // setInterval(function () {
+  //   document.getElementById("radio" + counter).checked = true;
+  //   counter++;
+  //   if (counter > 4) {
+  //     counter = 1;
+  //   }
+  // }, 3000);
   return (
     <div className="slider-container">
       <div className="slider">
@@ -44,10 +44,10 @@ const ImageSlider = ({ images }) => {
         </div>
         {/* <!--manual navigation start--> */}
         <div className="navigation-manual">
-          <label for="radio1" className="manual-btn"></label>
-          <label for="radio2" className="manual-btn"></label>
-          <label for="radio3" className="manual-btn"></label>
-          <label for="radio4" className="manual-btn"></label>
+          <label htmlFor="radio1" className="manual-btn"></label>
+          <label htmlFor="radio2" className="manual-btn"></label>
+          <label htmlFor="radio3" className="manual-btn"></label>
+          <label htmlFor="radio4" className="manual-btn"></label>
         </div>
         {/* <!--manual navigation end--> */}
       </div>

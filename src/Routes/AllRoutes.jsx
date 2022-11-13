@@ -12,6 +12,7 @@ import Wishlist from "../Pages/Wishlist";
 import ShoesPage from "../Pages/ShoesPage";
 import PrivateRouteProvider from "../Components/PrivateAuth/PrivateRoute";
 import Orders from "../Pages/Orders";
+import AdminPanel from "../Pages/AdminPanel";
 const AllRoutes = () => {
   return (
     <Routes>
@@ -52,6 +53,7 @@ const AllRoutes = () => {
           </PrivateRouteProvider>
         }
       />
+      <Route path="/adminpanel" element={<AdminPanel />} />
       <Route
         path="/wishlist"
         element={
