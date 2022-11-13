@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { CartContext } from "../../Context/CartContext/CartContext";
 import "./CartDropdown.css";
 import { useToast } from "@chakra-ui/react";
@@ -61,8 +61,12 @@ const CartDropdown = () => {
         <div className="subtotal">
           <b>Subtotal:</b> ${subtotal}
         </div>
-        <div className="checkout">Checkout</div>
-        <div className="view-cart">View Cart</div>
+        <div className="checkout">
+          <NavLink to={"/cart"}>Checkout</NavLink>
+        </div>
+        <div className="view-cart">
+          <NavLink to={"/cart"}>View Cart</NavLink>
+        </div>
       </div>
     </div>
   );
