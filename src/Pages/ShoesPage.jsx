@@ -5,14 +5,16 @@ import "./Products.css";
 import axios from "axios";
 
 import { Skeleton, SkeletonCircle, SkeletonText, Box } from "@chakra-ui/react";
+import { useParams } from "react-router-dom";
 const ShoesPage = () => {
   const [products, setProducts] = useState([]);
   const [loading, setloading] = useState(false);
+  const { id, category } = useParams();
   clearInterval(+localStorage.getItem("setIntervalID"));
 
   const fetchProducts = () => {
     setloading(true);
-    axios(`http://localhost:8080/shoes`).then((res) => {
+    axios(`http://localhost:8080/products`).then((res) => {
       setProducts(res.data);
       setloading(false);
     });
@@ -46,7 +48,9 @@ const ShoesPage = () => {
             </Box>
           </Box>
         ) : (
-          products.map((el) => <ProductCard product={el} key={el.id} />)
+          products
+            .filter((el) => el.category === category)
+            .map((el) => <ProductCard product={el} key={el.id} />)
         )}
       </div>
     </>

@@ -25,7 +25,6 @@ const AuthContextProvider = ({ children }) => {
   }
   function logIn(email, password) {
     setisAuth(true);
-
     localStorage.setItem("isAuth", true);
     return signInWithEmailAndPassword(Auth, email, password);
   }

@@ -18,8 +18,9 @@ const AllRoutes = () => {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/products" element={<Products />} />
+      <Route path="/products/:category" element={<Products />} />
       <Route
-        path="/:category/:id"
+        path="/products/:category/:id"
         element={
           <PrivateRouteProvider>
             <SingleProduct />
@@ -69,14 +70,14 @@ const AllRoutes = () => {
           </PrivateRouteProvider>
         }
       />
-      <Route
+      {/* <Route
         path="/shoes"
         element={
           <PrivateRouteProvider>
             <ShoesPage />
           </PrivateRouteProvider>
         }
-      />
+      /> */}
     </Routes>
   );
 };

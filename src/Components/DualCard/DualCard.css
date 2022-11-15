@@ -31,6 +31,7 @@
   text-transform: capitalize;
 }
 .dualcard-container button {
+  text-transform: capitalize;
   border: 2px solid black;
   padding: 10px 30px;
   font-size: 22px;

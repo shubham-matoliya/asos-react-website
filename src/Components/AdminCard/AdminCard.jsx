@@ -21,19 +21,23 @@ const AdminCard = ({ product, updatefun }) => {
   return (
     <div id={product.id} className="admin-item-card">
       <i className="fa-solid fa-x" onClick={() => deleteItem(product.id)}></i>
-      <img src={product.image} alt={product.title} />
-      <h2>{product.title}</h2>
+      <img src={product.outImage} alt={product.cardDetails} />
+      <h2>{product.cardDetails}</h2>
       <p>
         <b>Price: $</b>
         {product.price}
       </p>
       <p>
         <b>Category: </b>
-        {product.title}
+        {product.category}
       </p>
       <p>
         <b>Gender: </b>
         {product.gender}
+      </p>
+      <p>
+        <b>productID: </b>
+        {product.id}
       </p>
     </div>
   );

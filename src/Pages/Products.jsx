@@ -6,7 +6,9 @@ import axios from "axios";
 import { useToast } from "@chakra-ui/react";
 import { Skeleton, SkeletonCircle, SkeletonText, Box } from "@chakra-ui/react";
 import { CartContext } from "../Context/CartContext/CartContext";
+import { useParams } from "react-router-dom";
 const Products = () => {
+  const { category } = useParams();
   const toast = useToast();
   const [products, setProducts] = useState([]);
   const [loading, setloading] = useState(false);
