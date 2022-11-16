@@ -1,4 +1,4 @@
-import { Heading } from "@chakra-ui/react";
+import { Center, Heading } from "@chakra-ui/react";
 import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
 import { Navigate, useParams } from "react-router-dom";
@@ -6,58 +6,78 @@ import Navbar from "../Components/Navbar/Navbar";
 import { CartContext } from "../Context/CartContext/CartContext";
 import "./SingleProduct.css";
 import { useToast } from "@chakra-ui/react";
+import { collection, getDocs, doc } from "firebase/firestore";
+import { db } from "../Firebase/firebase";
+import { Spinner } from "@chakra-ui/react";
 const SingleProduct = () => {
   const toast = useToast();
   const { id, category } = useParams();
-  const [item, setItem] = useState(null);
+  // const [item, setItem] = useState(null);
+  const [error, setError] = useState(null);
   const { addSingleItemToCart } = useContext(CartContext);
   const [product, setProduct] = useState(null);
   clearInterval(+localStorage.getItem("setIntervalID"));
+  const productsItemsCollectionRef = collection(db, "products");
 
-  // console.log(id);
+  const getProducts = async () => {
+    const data = await getDocs(productsItemsCollectionRef);
+    try {
+      const datareceived = data.docs.map((el) => ({
+        ...el.data(),
+        id: el.id,
+      }));
+      // console.log("data received after getting is", datareceived);
+      let itemreceived = datareceived.filter((el) => {
+        return el.id === id && el.category === category;
+      });
+      console.log("itemreceived is ", itemreceived);
+      if (itemreceived.length)
+        setProduct({ ...itemreceived[0], size: "XS", quantity: 1 });
+      else setError("No Item found ☹️");
+    } catch (error) {
+      setError(error.message);
+    }
+  };
+  console.log("error is ", error);
   useEffect(() => {
-    axios(`http://localhost:8080/${category}/${id}`).then((res) => {
-      // console.log("data retrieve is ", res.data);
-      setItem({ ...res.data });
-      setProduct({ ...res.data, size: "XS", quantity: 1 });
-    });
+    getProducts();
   }, []);
-  // console.log("product is ", product);
+  console.log("product is ", product);
 
   return (
     <>
       <Navbar />
-      {item ? (
-        <div className="singleproduct" id={item.id}>
+      {product && !error ? (
+        <div className="singleproduct" id={product.id}>
           <div>
+          <span className="productID">{product.id}</span>
             <img
               className="inImage"
-              src={item.inImage}
-              alt={item.cardDetails}
+              src={product.inImage}
+              alt={product.cardDetails}
             />
             <img
               className="outImage"
-              src={item.outImage}
-              alt={item.cardDetails}
+              src={product.outImage}
+              alt={product.cardDetails}
             />
           </div>
           <div>
             <div>
-              <h2>{item.cardDetails}</h2>
+              <h2>{product.cardDetails}</h2>
             </div>
             <div>
               <p>
                 <span>
                   <b>Price: $</b>
                 </span>
-                <span className="price">{item.price}</span>
+                <span className="price">{product.price}</span>
               </p>
             </div>
             <div>
               <p>
-                <b>color:</b> Yellow
+                <b>Category:</b> {product.category}
               </p>
-              <span id="productid">2</span>
             </div>
 
             <p>
@@ -136,9 +156,19 @@ const SingleProduct = () => {
           </div>
         </div>
       ) : (
-        <Heading size={"2xl"} margin="15%" textAlign={"center"}>
-          Error! No item Found ☹️
-        </Heading>
+        <Center size={"2xl"} margin="15%" textAlign={"center"}>
+          {!error ? (
+            <Spinner
+              thickness="4px"
+              speed="0.65s"
+              emptyColor="gray.200"
+              color="blue.500"
+              size="xl"
+            />
+          ) : (
+            <Heading>{error}</Heading>
+          )}
+        </Center>
       )}
     </>
   );

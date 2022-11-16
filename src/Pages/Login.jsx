@@ -26,6 +26,7 @@ const Login = () => {
     setError("");
     try {
       await logIn(email, password);
+      console.log("user signed in");
       toast({
         title: "login successfull",
         status: "success",
@@ -84,7 +85,7 @@ const Login = () => {
         </div>
         <div>
           {error && <div className="error">{error}</div>}
-          <form onSubmit={() => handleSubmit()}>
+          <form onSubmit={(e) => handleSubmit(e)}>
             <input
               type={"email"}
               required

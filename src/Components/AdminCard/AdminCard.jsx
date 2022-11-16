@@ -21,8 +21,8 @@ const AdminCard = ({ product, updatefun }) => {
   return (
     <div id={product.id} className="admin-item-card">
       <i className="fa-solid fa-x" onClick={() => deleteItem(product.id)}></i>
-      <img src={product.outImage} alt={product.cardDetails} />
-      <h2>{product.cardDetails}</h2>
+      <img src={product.image} alt={product.cardDetails} />
+      <h2>{product.title}</h2>
       <p>
         <b>Price: $</b>
         {product.price}

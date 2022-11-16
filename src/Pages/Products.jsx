@@ -7,8 +7,11 @@ import { useToast } from "@chakra-ui/react";
 import { Skeleton, SkeletonCircle, SkeletonText, Box } from "@chakra-ui/react";
 import { CartContext } from "../Context/CartContext/CartContext";
 import { useParams } from "react-router-dom";
+import { collection, getDocs, doc } from "firebase/firestore";
+import { db } from "../Firebase/firebase";
 const Products = () => {
   const { category } = useParams();
+  console.log("category is,", category);
   const toast = useToast();
   const [products, setProducts] = useState([]);
   const [loading, setloading] = useState(false);
@@ -16,10 +19,53 @@ const Products = () => {
   const [limit, setLimit] = useState(5);
   const [order, setOrder] = useState("asc");
   const [total, setTotal] = useState(0);
+  const { wishlistedItems } = useContext(CartContext);
+
   const newarr = new Array(total).fill(0);
   clearInterval(+localStorage.getItem("setIntervalID"));
-
-  const { wishlistedItems } = useContext(CartContext);
+  // let testarr = [
+  //   1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+  // ];
+  // console.log("test array is", testarr.splice(17, 5));
+  //firebase
+  const productsItemsCollectionRef = collection(db, "products");
+  const getProducts = async (page = 1, limit = 10, order) => {
+    const data = await getDocs(productsItemsCollectionRef);
+    try {
+      const datareceived = data.docs.map((el) => ({
+        ...el.data(),
+        id: el.id,
+      }));
+      console.log("data received after getting is", datareceived);
+      setTotal(Math.ceil(datareceived.length / limit));
+      let newData, sortedData;
+      if (category) {
+        const filteredData = datareceived.filter((el) => {
+          return el.category === category;
+        });
+        console.log("filtered data is ", filteredData);
+        setTotal(Math.ceil(filteredData.length / limit));
+        if (order === "asc") {
+          sortedData = filteredData.sort((a, b) => a.price - b.price);
+          newData = sortedData.splice(limit * (page - 1), limit);
+        } else if (order === "desc") {
+          sortedData = filteredData.sort((a, b) => b.price - a.price);
+          newData = sortedData.splice(limit * (page - 1), limit);
+        } else newData = [...filteredData];
+      } else {
+        if (order === "asc") {
+          sortedData = datareceived.sort((a, b) => a.price - b.price);
+          newData = sortedData.splice(limit * (page - 1), limit);
+        } else if (order === "desc") {
+          sortedData = datareceived.sort((a, b) => b.price - a.price);
+          newData = sortedData.splice(limit * (page - 1), limit);
+        } else newData = datareceived.splice(limit * (page - 1), limit);
+      }
+      setProducts([...newData]);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   const fetchProducts = (page = 1, limit = 10, order) => {
     setloading(true);
     axios(`http://localhost:8080/products`).then((res) =>
@@ -45,7 +91,8 @@ const Products = () => {
       });
   };
   useEffect(() => {
-    fetchProducts(page, limit, order);
+    // fetchProducts(page, limit, order);
+    getProducts(page, limit, order);
   }, [page, limit, order]);
   return (
     <>
@@ -64,14 +111,14 @@ const Products = () => {
           <p>Select Page:</p>
           <div>
             <button
-              disabled={page === 1}
+              disabled={page <= 1}
               onClick={() => setPage((page) => page - 1)}
             >
               Prev
             </button>
-            <span>{page}</span>
+            <span>{`${page} of ${total}`}</span>
             <button
-              disabled={page === total}
+              disabled={page >= total}
               onClick={() => setPage((page) => page + 1)}
             >
               Next
@@ -81,6 +128,7 @@ const Products = () => {
         <div className="select-sort">
           <label>Sort products by: </label>
           <select onChange={(e) => setOrder(e.target.value)}>
+            <option value={""}>Sort by price:--</option>
             <option value={"asc"}>Price Low to High</option>
             <option value={"desc"}>Price High to Low</option>
           </select>

@@ -17,6 +17,7 @@ import {
   Button,
   useDisclosure,
 } from "@chakra-ui/react";
+
 const CartPage = () => {
   const toast = useToast();
   const { cartItems, addItemToCart, discountedPrice, subtotal, checkoutCart } =
@@ -25,7 +26,7 @@ const CartPage = () => {
   const cancelRef = React.useRef();
   const navigate = useNavigate();
   clearInterval(+localStorage.getItem("setIntervalID"));
-
+  console.log("cartItems are", cartItems);
   return (
     <>
       <Navbar />
@@ -106,18 +107,33 @@ const CartPage = () => {
                   <Button
                     colorScheme="blue"
                     onClick={() => {
-                      checkoutCart();
-                      toast({
-                        title: "Your Order has been successfully Placed!",
-                        status: "success",
-                        isClosable: true,
-                        position: "top",
-                        duration: 6000,
-                      });
-                      onClose();
-                      setTimeout(() => {
-                        navigate("/");
-                      }, 3000);
+                      console.log(cartItems);
+                      let sizeSelected = cartItems.filter(
+                        (el) => el.size === ""
+                      );
+                      // console.log("size selected", sizeSelected);
+                      if (sizeSelected.length) {
+                        toast({
+                          title: "Please select size of all items!",
+                          status: "error",
+                          isClosable: true,
+                          position: "top",
+                          duration: 3000,
+                        });
+                      } else {
+                        checkoutCart();
+                        toast({
+                          title: "Your Order has been successfully Placed!",
+                          status: "success",
+                          isClosable: true,
+                          position: "top",
+                          duration: 3000,
+                        });
+                        onClose();
+                        setTimeout(() => {
+                          navigate("/");
+                        }, 3000);
+                      }
                     }}
                     ml={3}
                   >

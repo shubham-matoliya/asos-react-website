@@ -32,7 +32,7 @@ const CartDropdown = () => {
                     <b>Quantity:</b> {el.quantity}
                   </span>
                   <span className="size">
-                    <b>Size:</b> M
+                    <b>Category:</b> {el.category}
                   </span>
                   <span className="price">
                     <b>Price:</b> {`$${el.price}`}

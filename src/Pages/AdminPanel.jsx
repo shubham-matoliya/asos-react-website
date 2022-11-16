@@ -55,10 +55,10 @@ const AdminPanel = () => {
   });
 
   // for firebase
-  const productsItemsCollectionRef = collection(db, "products");
+  // const productsItemsCollectionRef = collection(db, "products");
   const adminItemsCollectionRef = collection(db, "admin-collection-asos");
   const addProducts = async (product) => {
-    await addDoc(productsItemsCollectionRef, product);
+    await addDoc(adminItemsCollectionRef, product);
     toast({
       title: "item added",
       status: "success",
@@ -96,7 +96,7 @@ const AdminPanel = () => {
     document.querySelector("form").reset();
   };
   const getProducts = async () => {
-    const data = await getDocs(productsItemsCollectionRef);
+    const data = await getDocs(adminItemsCollectionRef);
     try {
       const datareceived = data.docs.map((el) => ({
         ...el.data(),
@@ -281,5 +281,3 @@ const AdminPanel = () => {
 };
 
 export default AdminPanel;
-
-

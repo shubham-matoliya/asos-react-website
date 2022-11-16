@@ -5,7 +5,7 @@ import "./ProductCard.css";
 import { useToast } from "@chakra-ui/react";
 
 const ProductCard = ({ product, wishliststate = false }) => {
-  const { id, outImage, inImage, cardDetails, price } = product;
+  const { id, outImage, inImage, cardDetails, price, category } = product;
   const {
     addItemToCart,
     addItemToWishList,
@@ -37,7 +37,7 @@ const ProductCard = ({ product, wishliststate = false }) => {
       duration: 3000,
     });
   };
-
+  console.log("product consoled is", product);
   return (
     <div className="parent" id={id}>
       <div className="outer-image">
@@ -56,7 +56,7 @@ const ProductCard = ({ product, wishliststate = false }) => {
           <img src={outImage} alt={cardDetails} />
         </Link>
         <div className="inner-image">
-          <Link to={`/products/${id}`}>
+          <Link to={`/products/${category}/${id}`}>
             <img src={inImage} alt={cardDetails} />
           </Link>
         </div>
@@ -76,10 +76,10 @@ const ProductCard = ({ product, wishliststate = false }) => {
           Quickshop
         </button>
       </div>
-      <Link to={`/products/${id}`} className="productName">
+      <Link to={`/products/${category}/${id}`} className="productName">
         {cardDetails}
       </Link>
-      <Link to={`/products/${id}`}>
+      <Link to={`/products/${category}/${id}`}>
         $<span className="price">{price}</span>
       </Link>
     </div>

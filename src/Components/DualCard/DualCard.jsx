@@ -29,7 +29,9 @@ const DualCard = () => {
           </div>
           <h1>{el.title}</h1>
           <p>{el.subtitle}</p>
-          <button>{el.btnText}</button>
+          <button>
+            <Link to={"/products"}>{el.btnText}</Link>
+          </button>
         </div>
       ))}
     </div>

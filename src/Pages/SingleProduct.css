@@ -17,12 +17,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
   /* border: 1px solid red; */
 }
 .singleproduct > div:nth-child(2) {
   padding: 40px;
 }
 .singleproduct h2 {
+  margin-top: 70px;
   font-size: 26px;
   text-align: center;
   font-weight: 400;
@@ -135,8 +137,14 @@
   color: #326b80;
   cursor: pointer;
 }
-
-span#productid {
+.productID {
+  position: absolute;
+  top: 15px;
+  left: 10px;
+  font-size: 12px;
+  color: #326b80;
+}
+/* span#productid {
   display: none;
   margin-left: 10%;
-}
+} */

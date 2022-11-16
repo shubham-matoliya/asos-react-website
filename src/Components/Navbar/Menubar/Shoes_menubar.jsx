@@ -27,7 +27,7 @@ const Shoes_menubar = () => {
           <ul>
             {list1.map((el) => (
               <li>
-                <Link to={"/shoes"}>{el}</Link>
+                <Link to={"/products/Shoes"}>{el}</Link>
               </li>
             ))}
           </ul>
@@ -44,7 +44,7 @@ const Shoes_menubar = () => {
               />
             </div>
             <div>
-              <Link to={"/products"}>ASOS Design</Link>
+              <Link to={"/products/Shoes"}>ASOS Design</Link>
             </div>
           </div>
           <div>
@@ -56,7 +56,7 @@ const Shoes_menubar = () => {
             </div>
             <div>
               {" "}
-              <Link to={"/products"}>Aldo</Link>
+              <Link to={"/products/Shoes"}>Aldo</Link>
             </div>
           </div>
           <div>
@@ -68,7 +68,7 @@ const Shoes_menubar = () => {
             </div>
             <div>
               {" "}
-              <Link to={"/products"}>Converse</Link>
+              <Link to={"/products/Shoes"}>Converse</Link>
             </div>
           </div>
           <div>
@@ -80,7 +80,7 @@ const Shoes_menubar = () => {
             </div>
             <div>
               {" "}
-              <Link to={"/products"}>Dr Martens</Link>
+              <Link to={"/products/Shoes"}>Dr Martens</Link>
             </div>
           </div>
           <div>
@@ -92,20 +92,20 @@ const Shoes_menubar = () => {
             </div>
             <div>
               {" "}
-              <Link to={"/products"}>Public Desire</Link>
+              <Link to={"/products/Shoes"}>Public Desire</Link>
             </div>
           </div>
         </div>
       </div>
       <div>
         <div className="submenu3">
-          <Link to={"/products"}>
+          <Link to={"/products/Shoes"}>
             <img
               alt="clothing"
               src="https://images.asos-media.com/products/puma-cali-dream-trainers-in-white-and-oatmeal/203883258-1-whiteoatmeal?$n_640w$&wid=634&fit=constrain"
             />
           </Link>
-          <Link to={"/products"}>
+          <Link to={"/products/Shoes"}>
             <img
               alt="clothing"
               src="https://images.asos-media.com/products/reebok-classic-club-c-vintage-trainers-in-chalk-with-green/202748018-1-whitegreen?$n_640w$&wid=634&fit=constrain"

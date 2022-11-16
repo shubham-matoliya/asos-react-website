@@ -4,7 +4,7 @@ import "./Coupons.css";
 const Coupons = () => {
   const { applyDiscount } = useContext(CartContext);
   return (
-    <div class="discount" onChange={(e) => applyDiscount(e.target.value)}>
+    <div className="discount" onChange={(e) => applyDiscount(e.target.value)}>
       <p>Apply Coupon for discount</p>
       <input type="radio" name="coupon" id="coupon20" value="20" />
       <label htmlFor="coupon20">

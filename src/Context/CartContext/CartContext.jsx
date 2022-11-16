@@ -62,7 +62,7 @@ const CartContextProvider = ({ children }) => {
         el.id === productToAdd.id
           ? {
               ...el,
-              quantity: +el.quantity + Number(productToAdd.quantity),
+              quantity: Number(el.quantity) + Number(productToAdd.quantity),
               size: productToAdd.size,
             }
           : el
@@ -77,7 +77,7 @@ const CartContextProvider = ({ children }) => {
         el.id === productToAdd.id ? { ...el, quantity: el.quantity + 1 } : el
       );
     }
-    return [...cartItems, { ...productToAdd, quantity: 1 }];
+    return [...cartItems, { ...productToAdd, quantity: 1, size: "" }];
   };
   const addItemToWishList = (productToAdd) => {
     setWishlistedItems([...wishlistedItems, { ...productToAdd }]);
