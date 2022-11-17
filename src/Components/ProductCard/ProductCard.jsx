@@ -37,7 +37,7 @@ const ProductCard = ({ product, wishliststate = false }) => {
       duration: 3000,
     });
   };
-  console.log("product consoled is", product);
+  // console.log("product consoled is", product);
   return (
     <div className="parent" id={id}>
       <div className="outer-image">

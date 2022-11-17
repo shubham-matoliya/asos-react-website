@@ -2,9 +2,9 @@ import React, { useContext, useEffect, useState } from "react";
 import Navbar from "../Components/Navbar/Navbar";
 import ProductCard from "../Components/ProductCard/ProductCard";
 import "./Products.css";
-import axios from "axios";
+
 import { useToast } from "@chakra-ui/react";
-import { Skeleton, SkeletonCircle, SkeletonText, Box } from "@chakra-ui/react";
+import { SkeletonCircle, SkeletonText, Box } from "@chakra-ui/react";
 import { CartContext } from "../Context/CartContext/CartContext";
 import { useParams } from "react-router-dom";
 import { collection, getDocs, doc } from "firebase/firestore";
@@ -19,81 +19,60 @@ const Products = () => {
   const [limit, setLimit] = useState(5);
   const [order, setOrder] = useState("asc");
   const [total, setTotal] = useState(0);
-  const { wishlistedItems } = useContext(CartContext);
+  const { wishlistedItems, localData, addProductsToLocalStorage } =
+    useContext(CartContext);
 
-  const newarr = new Array(total).fill(0);
   clearInterval(+localStorage.getItem("setIntervalID"));
-  // let testarr = [
-  //   1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
-  // ];
-  // console.log("test array is", testarr.splice(17, 5));
+
   //firebase
   const productsItemsCollectionRef = collection(db, "products");
   const getProducts = async (page = 1, limit = 10, order) => {
-    const data = await getDocs(productsItemsCollectionRef);
     try {
-      const datareceived = data.docs.map((el) => ({
-        ...el.data(),
-        id: el.id,
-      }));
-      console.log("data received after getting is", datareceived);
-      setTotal(Math.ceil(datareceived.length / limit));
-      let newData, sortedData;
-      if (category) {
-        const filteredData = datareceived.filter((el) => {
-          return el.category === category;
-        });
-        console.log("filtered data is ", filteredData);
-        setTotal(Math.ceil(filteredData.length / limit));
-        if (order === "asc") {
-          sortedData = filteredData.sort((a, b) => a.price - b.price);
-          newData = sortedData.splice(limit * (page - 1), limit);
-        } else if (order === "desc") {
-          sortedData = filteredData.sort((a, b) => b.price - a.price);
-          newData = sortedData.splice(limit * (page - 1), limit);
-        } else newData = [...filteredData];
+      if (!localData) {
+        const data = await getDocs(productsItemsCollectionRef);
+        const datareceived = data.docs.map((el) => ({
+          ...el.data(),
+          id: el.id,
+        }));
+
+        addProductsToLocalStorage(datareceived);
+        console.log("inside fetching loop");
       } else {
-        if (order === "asc") {
-          sortedData = datareceived.sort((a, b) => a.price - b.price);
-          newData = sortedData.splice(limit * (page - 1), limit);
-        } else if (order === "desc") {
-          sortedData = datareceived.sort((a, b) => b.price - a.price);
-          newData = sortedData.splice(limit * (page - 1), limit);
-        } else newData = datareceived.splice(limit * (page - 1), limit);
+        // console.log("data received after getting is", localData);
+        setTotal(Math.ceil(localData.length / limit));
+        let newData, sortedData;
+        if (category) {
+          const filteredData = localData.filter((el) => {
+            return el.category === category;
+          });
+          console.log("filtered data is ", filteredData);
+          setTotal(Math.ceil(filteredData.length / limit));
+          if (order === "asc") {
+            sortedData = filteredData.sort((a, b) => a.price - b.price);
+            newData = sortedData.splice(limit * (page - 1), limit);
+          } else if (order === "desc") {
+            sortedData = filteredData.sort((a, b) => b.price - a.price);
+            newData = sortedData.splice(limit * (page - 1), limit);
+          } else newData = [...filteredData];
+        } else {
+          if (order === "asc") {
+            sortedData = localData.sort((a, b) => a.price - b.price);
+            newData = sortedData.splice(limit * (page - 1), limit);
+          } else if (order === "desc") {
+            sortedData = localData.sort((a, b) => b.price - a.price);
+            newData = sortedData.splice(limit * (page - 1), limit);
+          } else newData = localData.splice(limit * (page - 1), limit);
+        }
+        setProducts([...newData]);
       }
-      setProducts([...newData]);
     } catch (error) {
       console.log(error);
     }
   };
-  const fetchProducts = (page = 1, limit = 10, order) => {
-    setloading(true);
-    axios(`http://localhost:8080/products`).then((res) =>
-      setTotal(Math.ceil(res.data.length / limit))
-    );
-    console.log("order is ", order);
-    axios(
-      `http://localhost:8080/products?_page=${page}&_limit=${limit}&_sort=price&_order=${order}`
-    )
-      .then((res) => {
-        setProducts(res.data);
-        setloading(false);
-      })
-      .catch((err) => {
-        setloading(true);
-        toast({
-          title: err.message,
-          status: "error",
-          isClosable: true,
-          position: "top",
-          duration: 3000,
-        });
-      });
-  };
+
   useEffect(() => {
-    // fetchProducts(page, limit, order);
     getProducts(page, limit, order);
-  }, [page, limit, order]);
+  }, [page, limit, order, localData]);
   return (
     <>
       <Navbar />

@@ -14,7 +14,12 @@ const CartContextProvider = ({ children }) => {
   const [discountedPrice, setDiscountedPrice] = useState(0);
   const applyDiscount = (discount) =>
     setDiscountedPrice(eval(subtotal * ((100 - discount) / 100)).toFixed(2));
-
+  const [localData, setLocalData] = useState(
+    JSON.parse(localStorage.getItem("products-data")) || 0
+  );
+  function addProductsToLocalStorage(products) {
+    setLocalData(products);
+  }
   const totalItems = cartItems.reduce((total, curr) => {
     return total + curr.quantity;
   }, 0);
@@ -27,7 +32,8 @@ const CartContextProvider = ({ children }) => {
     localStorage.setItem("asos-subtotal", JSON.stringify(subtotal));
     localStorage.setItem("asos-cartItems", JSON.stringify(cartItems));
     localStorage.setItem("wishlisted-items", JSON.stringify(wishlistedItems));
-  }, [cartItems, wishlistedItems]);
+    localStorage.setItem("products-data", JSON.stringify(localData));
+  }, [cartItems, wishlistedItems, localData]);
 
   const [orders, setOrders] = useState([]);
   const checkoutCart = () => {
@@ -105,6 +111,8 @@ const CartContextProvider = ({ children }) => {
         discountedPrice,
         checkoutCart,
         orders,
+        localData,
+        addProductsToLocalStorage,
       }}
     >
       {children}
