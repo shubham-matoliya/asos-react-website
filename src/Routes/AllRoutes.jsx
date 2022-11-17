@@ -9,7 +9,7 @@ import SignUp from "../Pages/SignUp";
 import SingleProduct from "../Pages/SingleProduct";
 import Singleuser from "../Pages/Singleuser";
 import Wishlist from "../Pages/Wishlist";
-import ShoesPage from "../Pages/ShoesPage";
+
 import PrivateRouteProvider from "../Components/PrivateAuth/PrivateRoute";
 import Orders from "../Pages/Orders";
 import AdminPanel from "../Pages/AdminPanel";
@@ -71,14 +71,6 @@ const AllRoutes = () => {
           </PrivateRouteProvider>
         }
       />
-      {/* <Route
-        path="/shoes"
-        element={
-          <PrivateRouteProvider>
-            <ShoesPage />
-          </PrivateRouteProvider>
-        }
-      /> */}
     </Routes>
   );
 };

@@ -30,7 +30,7 @@ const DualCard = () => {
           <h1>{el.title}</h1>
           <p>{el.subtitle}</p>
           <button>
-            <Link to={"/products"}>{el.btnText}</Link>
+            <Link to={"/products/Clothing"}>{el.btnText}</Link>
           </button>
         </div>
       ))}

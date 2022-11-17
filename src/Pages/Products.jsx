@@ -72,7 +72,7 @@ const Products = () => {
 
   useEffect(() => {
     getProducts(page, limit, order);
-  }, [page, limit, order, localData]);
+  }, [page, limit, order, localData, category]);
   return (
     <>
       <Navbar />

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./DisplayCard.css";
 const DisplayCard = ({ cardDetails }) => {
   return (
@@ -6,7 +7,7 @@ const DisplayCard = ({ cardDetails }) => {
       {cardDetails.map((el) => (
         <div>
           <div className="image-container">
-            <img src={el.image} alt={el.title} />
+           <Link to={'/products/Clothing'}> <img src={el.image} alt={el.title} /></Link>
           </div>
           <h2>{el.title}</h2>
           <p>{el.subtitle}</p>

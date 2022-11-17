@@ -50,28 +50,30 @@ const Sale_menubar = () => {
           <div>
             <ul>
               <li>
-                <Link to={"/products"}>SALE Jeans</Link>
+                <Link to={"/products/Clothing"}>SALE Jeans</Link>
               </li>
               <li>
-                <Link to={"/products"}>SALE Jewellery & Watches</Link>
+                <Link to={"/products/Clothing"}>SALE Jewellery & Watches</Link>
               </li>
               <li>
-                <Link to={"/products"}>SALE Jumpsuits & Playsuits</Link>
+                <Link to={"/products/Clothing"}>
+                  SALE Jumpsuits & Playsuits
+                </Link>
               </li>
               <li>
-                <Link to={"/products"}>SALE Lingerie & Nightwear</Link>
+                <Link to={"/products/Clothing"}>SALE Lingerie & Nightwear</Link>
               </li>
               <li>
-                <Link to={"/products"}>SALE Shorts</Link>
+                <Link to={"/products/Clothing"}>SALE Shorts</Link>
               </li>
               <li>
-                <Link to={"/products"}>SALE Skirts</Link>
+                <Link to={"/products/Clothing"}>SALE Skirts</Link>
               </li>
               <li>
-                <Link to={"/products"}>SALE Socks & Tights</Link>
+                <Link to={"/products/Clothing"}>SALE Socks & Tights</Link>
               </li>
               <li>
-                <Link to={"/products"}>SALE Sunglasses</Link>
+                <Link to={"/products/Clothing"}>SALE Sunglasses</Link>
               </li>
             </ul>
           </div>
@@ -82,31 +84,31 @@ const Sale_menubar = () => {
         <div className="submenu2">
           <ul>
             <li>
-              <Link to={"/products"}>Biggest deals</Link>
+              <Link to={"/products/Clothing"}>Biggest deals</Link>
             </li>
             <li>
-              <Link to={"/products"}>Sale under £15</Link>
+              <Link to={"/products/Clothing"}>Sale under £15</Link>
             </li>
             <li>
-              <Link to={"/products"}>Top saved</Link>
+              <Link to={"/products/Clothing"}>Top saved</Link>
             </li>
             <li>
-              <Link to={"/products"}>Dresses under £15</Link>
+              <Link to={"/products/Clothing"}>Dresses under £15</Link>
             </li>
             <li>
-              <Link to={"/products"}>Jeans under £20</Link>
+              <Link to={"/products/Clothing"}>Jeans under £20</Link>
             </li>
             <li>
-              <Link to={"/products"}>Sale: Autumn essentials</Link>
+              <Link to={"/products/Clothing"}>Sale: Autumn essentials</Link>
             </li>
             <li>
-              <Link to={"/products"}>Sale: Sneakerbrands</Link>
+              <Link to={"/products/Clothing"}>Sale: Sneakerbrands</Link>
             </li>
             <li>
-              <Link to={"/products"}>Occasionwear</Link>
+              <Link to={"/products/Clothing"}>Occasionwear</Link>
             </li>
             <li>
-              <Link to={"/products"}>Last chance to buy</Link>
+              <Link to={"/products/Clothing"}>Last chance to buy</Link>
             </li>
           </ul>
         </div>

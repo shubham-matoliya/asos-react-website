@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./New.css";
 const New_menubar = () => {
   const listItems = [
-    "View all",
+    "Watches",
     "Clothing",
     "Shoes",
     "Accessories",
@@ -21,7 +21,7 @@ const New_menubar = () => {
           <ul>
             {listItems.map((el) => (
               <li>
-                <Link to={"/products"}>{el}</Link>
+                <Link to={"/products/Watches"}>{el}</Link>
               </li>
             ))}
           </ul>
@@ -71,13 +71,13 @@ const New_menubar = () => {
       <div>
         <h2>NEW EDITS</h2>
         <div className="submenu3">
-          <Link to={"/products"}>
+          <Link to={"/products/Clothing"}>
             <img
               alt="clothing"
               src="https://images.asos-media.com/products/asos-design-cami-embellished-maxi-dress-with-a-belt-in-gold/201597010-1-gold?$n_640w$&wid=634&fit=constrain"
             />
           </Link>
-          <Link to={"/products"}>
+          <Link to={"/products/Clothing"}>
             <img
               alt="clothing"
               src="https://images.asos-media.com/products/asos-design-halter-neck-backless-wide-leg-jumpsuit-in-magenta/202859384-1-magenta?$n_960w$&wid=952&fit=constrain"
